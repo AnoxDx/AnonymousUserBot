@@ -6,7 +6,6 @@ geopy
 git-python
 glitch_this
 googlesearch-python
-googletrans @ git+https://github.com/HellBoy-OP/py-googletrans
 heroku3
 html_telegraph_poster
 httpx
