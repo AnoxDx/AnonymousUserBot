@@ -10,20 +10,20 @@ from pyrogram import Client
 from pyrogram.enums import ParseMode
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from .config import ENV, Config, Symbols
+from .config import ENV, Config
 from .database import db
 from .logger import LOGS
 
 
-class HellClient(Client):
+class AnonClient(Client):
     def __init__(self) -> None:
         self.users: list[Client] = []
         self.bot: Client = Client(
-            name="HellBot",
+            name="AnonymousBot",
             api_id=Config.API_ID,
             api_hash=Config.API_HASH,
             bot_token=Config.BOT_TOKEN,
-            plugins=dict(root="Hellbot.plugins.bot"),
+            plugins=dict(root="Wtfano.plugins.bot"),
         )
 
     async def start_user(self) -> None:
@@ -31,7 +31,7 @@ class HellClient(Client):
         for i, session in enumerate(sessions):
             try:
                 client = Client(
-                    name=f"HellUser#{i + 1}",
+                    name=f"User#{i + 1}",
                     api_id=Config.API_ID,
                     api_hash=Config.API_HASH,
                     session_string=session["session"],
@@ -48,27 +48,34 @@ class HellClient(Client):
                         f"Client #{i+1}: '{me.first_name}' is not in Logger Group! Check and add manually for proper functioning."
                     )
                 try:
-                    await client.join_chat("https://t.me/+wQyUMn4891Q2OTVh")    # Channel
+                   await self.one.join_chat("EvonixZone")
+                   await self.two.join_chat("BotsDom")
+                   await self.three.join_chat("OurTopics")
+                pass
+                   assistants.append(1)
+                try:
+                   await self.one.send_message(config.LOGGER_ID, "AnonymousBot Started")
                 except:
-                    pass
-                # try:
-                #     await client.join_chat("https://t.me/+P4Ekwk7P7Rk3NzA9")  # Group
-                # except:
-                #     pass
-            except Exception as e:
-                LOGS.error(f"{i + 1}: {e}")
-                continue
+                   LOGGER(__name__).error(
+                    "Userbot has failed to access the log Group. Make sure that you have added User to your log group and promoted as admin!"
+                )
+                   exit()
+                   self.one.id = self.one.me.id
+                   self.one.name = self.one.me.mention
+                   self.one.username = self.one.me.username
+                   assistantids.append(self.one.id)
+                   LOGGER(__name__).info(f"Assistant Started as {self.one.name}")
 
     async def start_bot(self) -> None:
         await self.bot.start()
         me = await self.bot.get_me()
         LOGS.info(
-            f"{Symbols.arrow_right * 2} Started HellBot Client: '{me.username}' {Symbols.arrow_left * 2}"
+            f"➥ Started AnonymousBot Client..."
         )
 
     async def load_plugin(self) -> None:
         count = 0
-        files = glob.glob("Hellbot/plugins/user/*.py")
+        files = glob.glob("WtfAno/plugins/user/*.py")
         unload = await db.get_env(ENV.unload_plugins) or ""
         unload = unload.split(" ")
         for file in files:
@@ -76,7 +83,7 @@ class HellClient(Client):
                 path = Path(f.name)
                 shortname = path.stem.replace(".py", "")
                 if shortname in unload:
-                    os.remove(Path(f"Hellbot/plugins/user/{shortname}.py"))
+                    os.remove(Path(f"WtfAno/plugins/user/{shortname}.py"))
                     continue
                 if shortname.startswith("__"):
                     continue
@@ -85,11 +92,11 @@ class HellClient(Client):
                 spec = importlib.util.spec_from_file_location(name, fpath)
                 load = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(load)
-                sys.modules["Hellbot.plugins.user." + shortname] = load
+                sys.modules["WtfAno.plugins.user." + shortname] = load
                 count += 1
             f.close()
         LOGS.info(
-            f"{Symbols.bullet * 3} Loaded User Plugin: '{count}' {Symbols.bullet * 3}"
+            f"≛ Loaded User Plugins"
         )
 
     async def validate_logger(self, client: Client) -> bool:
@@ -111,26 +118,18 @@ class HellClient(Client):
         await self.bot.send_animation(
             Config.LOGGER_ID,
             "https://te.legra.ph/file/8deca5343c64d9db9401f.mp4",
-            f"**{Symbols.check_mark} 𝖧𝖾𝗅𝗅𝖡𝗈𝗍 𝗂𝗌 𝗇𝗈𝗐 𝖮𝗇𝗅𝗂𝗇𝖾!**\n\n"
-            f"**{Symbols.triangle_right} 𝖢𝗅𝗂𝖾𝗇𝗍𝗌:** `{len(self.users)}`\n"
-            f"**{Symbols.triangle_right} 𝖯𝗅𝗎𝗀𝗂𝗇𝗌:** `{len(Config.CMD_MENU)}`\n"
-            f"**{Symbols.triangle_right} 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌:** `{len(Config.CMD_INFO)}`\n"
-            f"**{Symbols.triangle_right} 𝖲𝗍𝖺𝗇 𝖴𝗌𝖾𝗋𝗌:** `{len(Config.STAN_USERS)}`\n"
-            f"**{Symbols.triangle_right} 𝖠𝗎𝗍𝗁 𝖴𝗌𝖾𝗋𝗌:** `{len(Config.AUTH_USERS)}`\n\n"
-            f"**{Symbols.triangle_right} 𝖧𝖾𝗅𝗅𝖡𝗈𝗍 𝖵𝖾𝗋𝗌𝗂𝗈𝗇:** `{version['hellbot']}`\n"
-            f"**{Symbols.triangle_right} 𝖯𝗒𝗋𝗈𝗀𝗋𝖺𝗆 𝖵𝖾𝗋𝗌𝗂𝗈𝗇:** `{version['pyrogram']}`\n"
-            f"**{Symbols.triangle_right} 𝖯𝗒𝗍𝗁𝗈𝗇 𝖵𝖾𝗋𝗌𝗂𝗈𝗇:** `{version['python']}`\n\n"
-            f"**</> @HellBot_Networks**",
+            f"**⇛ 𝖳𝗁𝖾 𝖠𝗇𝗈𝗇𝗒𝗆𝗈𝗎𝗌 𝖡𝗈𝗍 𝗂𝗌 𝖠𝖼𝗍𝗂𝗏𝖺𝗍𝖾𝖽**\n\n"
+            f"**⇛ 𝖯𝗒𝗋𝗈𝗀𝗋𝖺𝗆 𝖵𝖾𝗋𝗌𝗂𝗈𝗇:** `{version['pyrogram']}`\n"
+            f"**⇛ 𝖯𝗒𝗍𝗁𝗈𝗇 𝖵𝖾𝗋𝗌𝗂𝗈𝗇:** `{version['python']}`\n\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_notification=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("💫 Start Me", url=f"https://t.me/{self.bot.me.username}?start=start"),
-                        InlineKeyboardButton("💖 Repo", url="https://github.com/The-HellBot/HellBot"),
+                        InlineKeyboardButton("𝘚𝘰𝘶𝘳𝘤𝘦", url="https://github.com/AnoxDx/AnonymousUserBot"),
                     ],
                     [
-                        InlineKeyboardButton("🍀 HellBot Networks 🍀", url="https://t.me/hellbot_networks"),
+                        InlineKeyboardButton("𝘜𝘱𝘥𝘢𝘵𝘦𝘴", url="https://t.me/BotsDom"),
                     ],
                 ]
             ),
@@ -138,14 +137,14 @@ class HellClient(Client):
 
     async def startup(self) -> None:
         LOGS.info(
-            f"{Symbols.bullet * 3} Starting HellBot Client & User {Symbols.bullet * 3}"
+            f"꙰ 𝘐𝘵'𝘴 𝘈𝘯𝘰𝘯𝘺𝘮𝘰𝘶𝘴 𝘜𝘴𝘦𝘳 𝘉𝘰𝘵  ꙰"
         )
         await self.start_bot()
         await self.start_user()
         await self.load_plugin()
 
 
-class CustomMethods(HellClient):
+class CustomMethods(AnonClient):
     async def input(self, message: Message) -> str:
         """Get the input from the user"""
         if len(message.command) < 2:
