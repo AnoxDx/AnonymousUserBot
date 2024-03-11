@@ -11,7 +11,7 @@ from .logger import LOGS
 class Database:
     def __init__(self, uri: str) -> None:
         self.client: AgnosticClient = motor_asyncio.AsyncIOMotorClient(uri)
-        self.db = self.client["Hellbot"]
+        self.db = self.client["AnonymousBot"]
 
         self.afk = self.db["afk"]
         self.antiflood = self.db["antiflood"]
