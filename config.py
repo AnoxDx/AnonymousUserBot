@@ -29,8 +29,6 @@ LOGGER_ID = int(getenv("LOGGER_ID", None))
 
 # Get this value from @LOVELYR_OBOT on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID", 6154979500))
-# Get this value from @LOVELYR_OBOT on Telegram by /id
-OWNER_GC = int(getenv("OWNER_ID", None))
 ## Fill these variables if you're deploying on heroku.
 # Your heroku app name
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
@@ -64,7 +62,6 @@ votemode = {}
 autoclean = []
 confirmer = {}
 
-REPO_IMG_URL = getenv("REPO_IMG_URL", "https://graph.org/file/513da5a8bd5c39bd1b78f.mp4")
 START_IMG_URL = getenv(
     "START_IMG_URL", "https://graph.org/file/2fea203f4d11f17edf7ce.jpg"
 )
@@ -75,10 +72,6 @@ PING_IMG_URL = getenv(
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
-
-
-DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
-
 
 if SUPPORT_CHANNEL:
     if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
