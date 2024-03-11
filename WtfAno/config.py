@@ -1,4 +1,3 @@
-import re
 from os import getenv
 
 from dotenv import load_dotenv
@@ -6,81 +5,129 @@ from pyrogram import filters
 
 load_dotenv()
 
-# Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID"))
-API_HASH = getenv("API_HASH")
 
-# Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN")
+class Config:
+    # editable configs
+    API_HASH = getenv("API_HASH", None)
+    API_ID = int(getenv("API_ID", 0))
+    BOT_TOKEN = getenv("BOT_TOKEN", None)
+    DATABASE_URL = getenv("DATABASE_URL", None)
+    HANDLERS = getenv("HANDLERS", ". ! ?").strip().split()
+    LOGGER_ID = int(getenv("LOGGER_ID", 0))
+    OWNER_ID = int(getenv("OWNER_ID", 0))
 
-# Get Your bot username
-BOT_USERNAME = getenv("BOT_USERNAME" , "WagonMusicBot")
+    # heroku related configs
+    HEROKU_APPNAME = getenv("HEROKU_APPNAME", None)
+    HEROKU_APIKEY = getenv("HEROKU_APIKEY", None)
 
-# Don't Add style font 
-BOT_NAME = getenv("BOT_NAME" , "Wagon")
+    # github related configs
+    PLUGINS_REPO = getenv("PLUGINS_REPO", "The-HellBot/Plugins")
+    DEPLOY_REPO = getenv("DEPLOY_REPO", "The-HellBot/Hellbot")
 
-# Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+    # storage dir: you may or may not edit
+    DWL_DIR = "./downloads/"
+    TEMP_DIR = "./temp/"
+    CHROME_BIN = getenv("CHROME_BIN", "/app/.apt/usr/bin/google-chrome")
+    CHROME_DRIVER = getenv("CHROME_DRIVER", "/app/.chromedriver/bin/chromedriver")
+    FONT_PATH = "./Hellbot/resources/fonts/Montserrat.ttf"
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 900))
+    # users config: do not edit
+    AUTH_USERS = filters.user()
+    BANNED_USERS = filters.user()
+    MUTED_USERS = filters.user()
+    DEVS = filters.user([1432756163, 1874070588, 1533682758])
+    STAN_USERS = filters.user()
+    FORCESUBS = filters.chat()
 
-# Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID", None))
+    # Global config: do not edit
+    BOT_CMD_INFO = {}
+    BOT_CMD_MENU = {}
+    BOT_HELP = {}
 
-# Get this value from @LOVELYR_OBOT on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID", 6154979500))
-## Fill these variables if you're deploying on heroku.
-# Your heroku app name
-HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
-# Get it from http://dashboard.heroku.com/account
-HEROKU_API_KEY = getenv("HEROKU_API_KEY")
+    CMD_INFO = {}
+    CMD_MENU = {}
+    HELP_DICT = {}
 
-UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO",
-    "https://github.com/AnoxDx/AnoxMusicPro",
-)
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
-GIT_TOKEN = getenv(
-    "GIT_TOKEN", None
-)  # Fill this variable if your upstream repository is private
-
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/BotsDom")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/OurTopics")
-
-# Get your pyrogram v2 session from Trusted Bot on Telegram
-STRING1 = getenv("STRING_SESSION", None)
-STRING2 = getenv("STRING_SESSION2", None)
-STRING3 = getenv("STRING_SESSION3", None)
-STRING4 = getenv("STRING_SESSION4", None)
-STRING5 = getenv("STRING_SESSION5", None)
+    AFK_CACHE = {}
 
 
-BANNED_USERS = filters.user()
-adminlist = {}
-lyrical = {}
-votemode = {}
-autoclean = []
-confirmer = {}
+class ENV:
+    """Database ENV Names"""
 
-START_IMG_URL = getenv(
-    "START_IMG_URL", "https://graph.org/file/2fea203f4d11f17edf7ce.jpg"
-)
-PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://graph.org/file/129372c4d78955a2a89ea.jpg"
-)
+    airing_template = "AIRING_TEMPLATE"
+    airpollution_template = "AIRPOLLUTION_TEMPLATE"
+    alive_pic = "ALIVE_PIC"
+    alive_template = "ALIVE_TEMPLATE"
+    anilist_user_template = "ANILIST_USER_TEMPLATE"
+    anime_template = "ANIME_TEMPLATE"
+    btn_in_help = "BUTTONS_IN_HELP"
+    character_template = "CHARACTER_TEMPLATE"
+    chat_info_template = "CHAT_INFO_TEMPLATE"
+    climate_api = "CLIMATE_API"
+    climate_template = "CLIMATE_TEMPLATE"
+    command_template = "COMMAND_TEMPLATE"
+    currency_api = "CURRENCY_API"
+    custom_pmpermit = "CUSTOM_PMPERMIT"
+    gban_template = "GBAN_TEMPLATE"
+    github_user_template = "GITHUB_USER_TEMPLATE"
+    help_emoji = "HELP_EMOJI"
+    help_template = "HELP_TEMPLATE"
+    is_logger = "IS_LOGGER"
+    lyrics_api = "LYRICS_API"
+    manga_template = "MANGA_TEMPLATE"
+    ocr_api = "OCR_API"
+    ping_pic = "PING_PIC"
+    ping_template = "PING_TEMPLATE"
+    pm_logger = "PM_LOGGER"
+    pm_max_spam = "PM_MAX_SPAM"
+    pmpermit = "PMPERMIT"
+    pmpermit_pic = "PMPERMIT_PIC"
+    remove_bg_api = "REMOVE_BG_API"
+    thumbnail_url = "THUMBNAIL_URL"
+    statistics_template = "STATISTICS_TEMPLATE"
+    sticker_packname = "STICKER_PACKNAME"
+    tag_logger = "TAG_LOGGER"
+    telegraph_account = "TELEGRAPH_ACCOUNT"
+    time_zone = "TIME_ZONE"
+    unload_plugins = "UNLOAD_PLUGINS"
+    unsplash_api = "UNSPLASH_API"
+    usage_template = "USAGE_TEMPLATE"
+    user_info_template = "USER_INFO_TEMPLATE"
 
-def time_to_seconds(time):
-    stringt = str(time)
-    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
 
-if SUPPORT_CHANNEL:
-    if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
-        )
+class Limits:
+    AdminRoleLength = 16
+    AdminsLimit = 50
+    BioLength = 70
+    BotDescriptionLength = 512
+    BotInfoLength = 120
+    BotsLimit = 20
+    CaptionLength = 1024
+    ChannelGroupsLimit = 500
+    ChatTitleLength = 128
+    FileNameLength = 60
+    MessageLength = 4096
+    NameLength = 64
+    PremiumBioLength = 140
+    PremiumCaptionLength = 2048
+    PremiumChannelGroupsLimit = 1000
+    StickerAniamtedLimit = 50
+    StickerPackNameLength = 64
+    StickerStaticLimit = 120
 
-if SUPPORT_CHAT:
-    if not re.match("(?:http|https)://", SUPPORT_CHAT):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
-        )
+os_configs = [
+    "API_HASH",
+    "API_ID",
+    "BOT_TOKEN",
+    "DATABASE_URL",
+    "DEPLOY_REPO",
+    "HANDLERS",
+    "HEROKU_APIKEY",
+    "HEROKU_APPNAME",
+    "LOGGER_ID",
+    "OWNER_ID",
+    "PLUGINS_REPO",
+]
+all_env: list[str] = [
+    value for key, value in ENV.__dict__.items() if not key.startswith("__")
+]
