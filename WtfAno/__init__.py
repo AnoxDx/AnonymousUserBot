@@ -1,5 +1,5 @@
 from .clients import Anonymous
-from .config import ENV, Config, Limits, Symbols
+from .config import ENV, Config, Limits
 from .database import db
 from .initializer import ForcesubSetup, UserSetup
 from .logger import LOGS
