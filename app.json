@@ -23,29 +23,12 @@
             "description": "Make a bot from @BotFather and paste the bot token here.",
             "value": ""
         },
-        "DATABASE_URL": {
-            "description": "Only use mongodb url here. Get it from https://mongodb.com/",
-            "value": ""
-        },
-        "HANDLERS": {
-            "description": "Lis of handlers seperated with a space to use for userbot command trigger.",
-            "value": ". ! , ?",
-            "required": false
-        },
-        "LOGGER_ID": {
-            "description": "The chat id of your logging channel/group.",
-            "value": ""
-        },
         "OWNER_ID": {
             "description": "Get it from @LOVELYR_OBOT by writing /id in pm",
             "value": ""
         },
-        "HEROKU_APPNAME": {
-            "description": "Your heroku app name. Get it from the top of this page.",
-            "value": ""
-        },
-        "HEROKU_APIKEY": {
-            "description": "Heroku api key. Get it from https://dashboard.heroku.com/account",
+        "STRING_SESSION": {
+            "description": "String session of Pyrogram.",
             "value": ""
         }
     },
