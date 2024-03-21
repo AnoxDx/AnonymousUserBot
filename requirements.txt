@@ -1,0 +1,9 @@
+asyncio
+pyrogram
+tgcrypto
+python-dotenv
+pyromod
+motor
+pyyaml
+requests
+speedtest-cli
