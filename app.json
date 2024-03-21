@@ -23,10 +23,6 @@
             "description": "Make a bot from @BotFather and paste the bot token here.",
             "value": ""
         },
-        "OWNER_ID": {
-            "description": "Get it from @LOVELYR_OBOT by writing /id in pm",
-            "value": ""
-        },
         "STRING_SESSION": {
             "description": "String session of Pyrogram.",
             "value": ""
