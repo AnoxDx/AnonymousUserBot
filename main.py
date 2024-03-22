@@ -6,7 +6,6 @@ from pyrogram.types import Message
 import config
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, CallbackQuery
-from datetime import datetime
 import humanize
 from pyrogram.types import User
 from pyrogram import enums
