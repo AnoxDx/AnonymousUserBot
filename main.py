@@ -27,10 +27,10 @@ async def start(client, message):
 
 @AnoxDx.on_message(filters.command(["fuck"], ".") & (filters.me))
 async def fuck(client, message):
-   X = await message.reply_text("**Starting...**", reply_markup=InlineKeyboardMarkup(START_BUTTONS))
+   X = await message.reply_text("**Fucking...**", reply_markup=InlineKeyboardMarkup(START_BUTTONS))
    time.sleep(1.0)
-   await AnoxDx.edit_message_text(chat_id=message.chat.id, message_id=X.id, text="""**.                      
-                      /¯` _/
+   await AnoxDx.edit_message_text(chat_id=message.chat.id, message_id=X.id, text="""**.                       /¯ )
+                      /¯  /
                     /    /
               /´¯/'   '/´¯¯•¸
           /'/   /    /       /¨¯\
