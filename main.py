@@ -11,7 +11,7 @@ AnoxDx = Client(
   name="PyrogramBot",
   api_id=config.API_ID,
   api_hash=config.API_HASH,
-  string_session=config.STRING_SESSION
+  session_string=config.STRING_SESSION
 )
 START_BUTTONS = [
     [
