@@ -31,12 +31,7 @@ START_BUTTONS = [
     ]
 ]
 
-StartTime = time.time()
-START_TIME = datetime.now()
 CMD_HELP = {}
-SUDO_USER = SUDO_USERS
-clients = []
-ids = []
 
 @AnoxDx.on_message(filters.command(["start"], ".") & (filters.me))
 async def start(client, message):
