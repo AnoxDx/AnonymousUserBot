@@ -17,7 +17,7 @@ async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
     )
     return await xyz(*args, **kwargs)
 
-@Client.on_message(filters.command(["help", "helpme"], ".") & filters.me)
+@Ano.on_message(filters.command(["help", "helpme"], ".") & filters.me)
 async def module_help(client: Client, message: Message):
     cmd = message.command
     help_arg = ""
@@ -38,17 +38,17 @@ async def module_help(client: Client, message: Message):
             print(f"{e}")
             ac = PrettyTable()
             ac.header = False
-            ac.title = "Zaid-UserBot Plugins"
+            ac.title = "**Anonymous-Modules :** #Plugins"
             ac.align = "l"
             for x in split_list(sorted(CMD_HELP.keys()), 2):
                 ac.add_row([x[0], x[1] if len(x) >= 2 else None])
             xx = await client.send_message(
                 message.chat.id,
-                f"```{str(ac)}```\n• @TheSupportChat × @TheUpdatesChannel •",
+                f"```{str(ac)}```\n< @BotsDom >",
                 reply_to_message_id=ReplyCheck(message),
             )
             await xx.reply(
-                f"**Usage:** `.help broadcast` **To View Module Information**"
+                f"**Usage:** `.help < Plug title >` **To View Module Information**"
             )
             return
 
@@ -58,7 +58,7 @@ async def module_help(client: Client, message: Message):
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-            this_command += "© @TheUpdatesChannel"
+            this_command += "© @BotsDom"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
@@ -80,15 +80,15 @@ async def module_helper(client: Client, message: Message):
     elif not message.reply_to_message and len(cmd) == 1:
         ac = PrettyTable()
         ac.header = False
-        ac.title = "Zaid-UserBot Plugins"
+        ac.title = "**Anonymous-Modules :** #Plugins"
         ac.align = "l"
         for x in split_list(sorted(CMD_HELP.keys()), 2):
             ac.add_row([x[0], x[1] if len(x) >= 2 else None])
         await edit_or_reply(
-            message, f"```{str(ac)}```\n• @TheSupportChat × @TheUpdatesChannel •"
+            message, f"```{str(ac)}```\n< @BotsDom >"
         )
         await message.reply(
-            f"**Usage**:`.help broadcast` **To View Module details**"
+            f"**Usage:** `.help < Plug title >` **To View Module Information**"
         )
 
     if help_arg:
@@ -97,7 +97,7 @@ async def module_helper(client: Client, message: Message):
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-            this_command += "© @Anonymous"
+            this_command += "© @BotsDom"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
