@@ -1,6 +1,7 @@
 from Anonymous import Ano
 from pyrogram import Message, filters
-from Anonymous.modules.help import *
+from Anonymous.modules.help import add_command_help
+
 
 @Client.on_message(filters.command(["react"], ".") & filters.me | filters.user(SUDO_USER))
 async def gs(client: Client, message: Message):
