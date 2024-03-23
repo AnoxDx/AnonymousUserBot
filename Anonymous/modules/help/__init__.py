@@ -1,1 +1,1 @@
-from Anonymous.help import *
+from Anonymous.modules.help import *
