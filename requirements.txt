@@ -11,3 +11,7 @@ aiohttp
 prettytable
 humanize
 uwuify
+telegraph
+aiohttp
+aiofiles
+gitpython
