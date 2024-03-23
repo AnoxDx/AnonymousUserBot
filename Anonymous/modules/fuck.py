@@ -18,3 +18,9 @@ async def fuck(client, message):
             \              (
               \**""")
 
+add_command_help(
+    "fuck",
+    [
+        [".fuck", "Its animation command just try it..."],
+    ],
+)
