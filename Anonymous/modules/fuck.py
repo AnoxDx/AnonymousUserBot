@@ -2,6 +2,7 @@ from Anonymous import Ano
 from pyrogram.types import Message
 from pyrogram import Client, filters
 import config
+from Anonymous.modules.help import add_command_help
 
 @Ano.on_message(filters.command(["fuck"], ".") & (filters.me))
 async def fuck(client, message):
