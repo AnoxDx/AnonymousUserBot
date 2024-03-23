@@ -15,7 +15,7 @@ async def inviteee(client: Client, message: Message):
     mg = await message.reply_text("`Adding Users!`")
     user_s_to_add = message.text.split(" ", 1)[1]
     if not user_s_to_add:
-        await mg.edit("`Give Me Users To Add! Check Help Menu For More Info!`")
+        await mg.edit("`Mention username to add !`")
         return
     user_list = user_s_to_add.split(" ")
     try:
@@ -23,13 +23,13 @@ async def inviteee(client: Client, message: Message):
     except BaseException as e:
         await mg.edit(f"`Unable To Add Users! \nTraceBack : {e}`")
         return
-    await mg.edit(f"`Sucessfully Added {len(user_list)} To This Group / Channel!`")
+    await mg.edit(f"`Sucessfully Added {len(user_list)} To This Chat!`")
 
 @Client.on_message(
     filters.command(["inviteall"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def inv(client: Client, message: Message):
-    ex = await message.reply_text("`Processing . . .`")
+    ex = await message.reply_text("`𝖠𝖽𝖽𝗂𝗇𝗀 . . .`")
     text = message.text.split(" ", 1)
     queryy = text[1]
     chat = await client.get_chat(queryy)
@@ -53,14 +53,14 @@ async def inv(client: Client, message: Message):
 
 @Client.on_message(filters.command("invitelink", ".") & filters.me)
 async def invite_link(client: Client, message: Message):
-    um = await message.edit_text("`Processing...`")
+    um = await message.edit_text("`Fetching...`")
     if message.chat.type in [ChatType.GROUP, ChatType.SUPERGROUP]:
         message.chat.title
         try:
             link = await client.export_chat_invite_link(message.chat.id)
-            await um.edit(f"**Link Invite:** {link}")
+            await um.edit(f"**Link :** {link}")
         except Exception:
-            await um.edit("Denied permission")
+            await um.edit("Access Denied")
 
 
 add_command_help(
@@ -68,9 +68,9 @@ add_command_help(
     [
         [
             "invitelink",
-            "Get your private invite link. [Need Admin]",
+            "for private groups, user must have admin",
         ],
         ["invite @username", "to invite someone."],
-        ["inviteall @username", "Mass adding (can affect your account)."],
+        ["inviteall @username", "Mass adding (may cause flood)."],
     ],
 )
