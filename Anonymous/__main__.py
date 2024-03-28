@@ -6,7 +6,6 @@ from Anonymous.modules import ALL_MODULES
 from Anonymous import clients, app, ids
 
 async def start_bot():
-    await app.start()
     print("LOG: Founded Bot token Booting..")
     for all_module in ALL_MODULES:
         importlib.import_module("Anonymous.modules" + all_module)
