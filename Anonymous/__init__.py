@@ -3,7 +3,6 @@ import time
 
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 from pyrogram import Client
-
 import config
 
 SUDOERS = config.OWNER_ID
