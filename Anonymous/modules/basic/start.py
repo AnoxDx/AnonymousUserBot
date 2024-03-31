@@ -7,7 +7,7 @@ import config
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, CallbackQuery
 from Anonymous import Ano
-from Anonymous.modules.help import add_command_help
+from Anonymous.modules.help import add_help_cmd
 
 START_BUTTONS = [
     [
@@ -25,7 +25,7 @@ async def start(client, message):
    time.sleep(1.0)
    await Ano.edit_message_text(chat_id=message.chat.id, message_id=X.id, text="**TADDAAA :**\n\nIt's Your Own UserBot\n**#AnonymousUserBot**", reply_markup=InlineKeyboardMarkup(START_BUTTONS))
 
-add_command_help(
+add_help_cmd(
     "start",
     [
         [".start", "Check if bot is alive"]
