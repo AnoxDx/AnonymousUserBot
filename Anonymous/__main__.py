@@ -10,14 +10,14 @@ async def start_bot():
     print("started..")
     for all_module in ALL_MODULES:
         importlib.import_module("Anonymous.modules" + all_module)
-        print(f"Successfully Imported {all_module} 💥")
+        print(f"Successfully Imported {all_module} !")
     for X in clients:
         try:
             await X.start()
-            ex = await X.get_me()
+            Ub = await X.get_me()
             await join(X)
             print("<<<Started UB>>>")
-            ids.append(ex.id)
+            ids.append(Ub.id)
         except Exception as e:
             print(f"{e}")
     await idle()
