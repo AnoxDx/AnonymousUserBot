@@ -2,8 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from telegraph import Telegraph, exceptions, upload_file
 import os
-
-
+from Anonymous.modules.help import add_command_help
 from Anonymous.modules.help import *
 
 telegraph = Telegraph()
