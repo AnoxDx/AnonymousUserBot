@@ -3,8 +3,8 @@ import asyncio
 from pyrogram.types import Message 
 
 from pyrogram.methods import messages
-from Anonymous.database.pmpermitdb import get_approved_users, pm_guard
-import Anonymous.database.pmpermitdb as AnoX
+from Anonymous.database.pmpermit import get_approved_users, pm_guard
+import Anonymous.database.pmpermit as AnoX
 from config import LOG_GROUP, PM_LOGGER
 FLOOD_CTRL = 0
 ALLOWED = []
