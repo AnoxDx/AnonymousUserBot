@@ -9,7 +9,7 @@ from pyrogram import *
 from pyrogram.types import * 
 
 PHONE_NUMBER_TEXT = (
-    "✘ Heya My Master👋!\n\n✘ I'm Your Assistant?\n\n‣ I can help you to host Your Left Clients.\n\n‣ This specially for Buzzy People's(lazy)\n\n‣ Now /clone {send your PyroGram String Session}"
+    "**Hey !\n\n> You are now the master of this bot, May you enjoy my superiority ⚡ \n\nThank You !**"
 )
 ALIVE_PIC = 'https://graph.org/file/f7da95a365c0f89c85fb7.jpg'
 
@@ -17,10 +17,10 @@ ALIVE_PIC = 'https://graph.org/file/f7da95a365c0f89c85fb7.jpg'
 async def hello(client: app, message):
     buttons = [
            [
-                InlineKeyboardButton("✘ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ", url="t.me/BotsDom"),
+                InlineKeyboardButton("Channel", url="t.me/BotsDom"),
             ],
             [
-                InlineKeyboardButton("✘ ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", url="t.me/OurTopics"),
+                InlineKeyboardButton("Chats", url="t.me/OurTopics"),
             ],
             ]
     reply_markup = InlineKeyboardMarkup(buttons)
