@@ -63,7 +63,7 @@ async def invite_link(client: Client, message: Message):
             await um.edit("Access Denied")
 
 
-add_command_help(
+add_help_cmd(
     "invite",
     [
         [
