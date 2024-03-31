@@ -7,7 +7,7 @@ from Anonymous import clients, app, ids
 
 async def start_bot():
     await app.start()
-    print("LOG: Founded Bot token Booting..")
+    print("started..")
     for all_module in ALL_MODULES:
         importlib.import_module("Anonymous.modules" + all_module)
         print(f"Successfully Imported {all_module} 💥")
@@ -16,7 +16,7 @@ async def start_bot():
             await X.start()
             ex = await X.get_me()
             await join(X)
-            print(f"Started {ex.first_name} 🔥")
+            print("<<<Started UB>>>")
             ids.append(ex.id)
         except Exception as e:
             print(f"{e}")
