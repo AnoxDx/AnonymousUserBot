@@ -9,6 +9,6 @@ def restart():
 
 async def join(client):
     try:
-        await client.join_chat("Anonymous_Chats")
+        await client.join_chat("BotsDom")
     except BaseException:
         pass
