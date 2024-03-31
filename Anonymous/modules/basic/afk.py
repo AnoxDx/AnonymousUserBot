@@ -6,7 +6,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 
 from Anonymous.helper.Pyt import GetChatID, ReplyCheck
-from Anonymous.modules.help import add_command_help
+from Anonymous.modules.help import add_help_cmd
 
 AFK = False
 AFK_REASON = ""
@@ -134,7 +134,7 @@ if AFK:
            await reply.delete()
 
 
-add_command_help(
+add_help_cmd(
     "afk",
     [
         [".afk", "Activates AFK mode with reason as anything after .afk\nUsage: ```.afk <reason>```"],
