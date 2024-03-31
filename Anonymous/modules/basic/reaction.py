@@ -20,7 +20,7 @@ async def gs(client: Client, message: Message):
  await Ano.send_reaction(chat_id=user_s_to_send, message_id=user_s_to_send, emoji=emoji)
 
 
-add_command_help(
+add_help_cmd(
     "react/send",
     [
         [
