@@ -34,7 +34,7 @@ async def pmguard(client, message):
     if not arg:
         await message.edit("**Set limit to what?**")
         return
-    await Zaid.set_limit(int(arg))
+    await AnoX.set_limit(int(arg))
     await message.edit(f"**Limit set to {arg}**")
 
 
@@ -43,21 +43,21 @@ async def pmguard(client, message):
 async def setpmmsg(client, message):
     arg = get_arg(message)
     if not arg:
-        await message.edit("**What message to set**")
+        await message.edit("**Write the message to set**")
         return
     if arg == "default":
-        await Zaid.set_block_message(Zaid.BLOCKED)
-        await message.edit("**Block message set to default**.")
+        await AnoX.set_block_message(AnoX.BLOCKED)
+        await message.edit("**Successfully proceeded !**.")
         return
-    await Zaid.set_block_message(f"`{arg}`")
-    await message.edit("**Custom block message set**")
+    await AnoX.set_block_message(f"`{arg}`")
+    await message.edit("` Custom block message set `")
 
 
 @Client.on_message(filters.command(["allow", "ap", "approve", "a"], ["."]) & filters.me & filters.private)
 async def allow(client, message):
     chat_id = message.chat.id
-    pmpermit, pm_message, limit, block_message = await Zaid.get_pm_settings()
-    await Zaid.allow_user(chat_id)
+    pmpermit, pm_message, limit, block_message = await AnoX.get_pm_settings()
+    await AnoX.allow_user(chat_id)
     await message.edit(f"**I have allowed [you](tg://user?id={chat_id}) to PM me.**")
     async for message in client.search_messages(
         chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
@@ -69,8 +69,8 @@ async def allow(client, message):
 @Client.on_message(filters.command(["deny", "dap", "disapprove", "dapp"], ["."]) & filters.me & filters.private)
 async def deny(client, message):
     chat_id = message.chat.id
-    await Zaid.deny_user(chat_id)
-    await message.edit(f"**I have denied [you](tg://user?id={chat_id}) to PM me.**")
+    await AnoX.deny_user(chat_id)
+    await message.edit(f"**My Master have denied [you](tg://user?id={chat_id}) to PM !**")
 
 
 @Client.on_message(
@@ -83,7 +83,7 @@ async def deny(client, message):
 )
 async def reply_pm(app: Client, message):
     global FLOOD_CTRL
-    pmpermit, pm_message, limit, block_message = await Zaid.get_pm_settings()
+    pmpermit, pm_message, limit, block_message = await AnoX.get_pm_settings()
     user = message.from_user.id
     user_warns = 0 if user not in USERS_AND_WARNS else USERS_AND_WARNS[user]
     if PM_LOGGER:
