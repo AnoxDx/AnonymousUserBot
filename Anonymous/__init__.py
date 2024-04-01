@@ -11,7 +11,7 @@ CMD_HELP = {}
 clients = []
 ids = []
 
-SUDO_USERS = config.OWNER_ID
+SUDO_USER = config.OWNER_ID
 aiosession = ClientSession()
 
 if API_ID:
