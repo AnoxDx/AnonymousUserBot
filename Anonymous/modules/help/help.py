@@ -1,11 +1,10 @@
 import asyncio
-from prettytable import PrettyTable
-from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 from Anonymous import app, CMD_HELP
+from prettytable import PrettyTable
+from pyrogram import Client, enums, filters
 from Anonymous.helper.Pyt import ReplyCheck
 from Anonymous.helper.utility import split_list
-Ano
 
 async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
     xyz = (
