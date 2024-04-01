@@ -1,5 +1,5 @@
 from Anonymous import app
-from pyrogram import Message, filters
+from pyrogram.types import Message, filters
 from Anonymous.modules.help import add_help_cmd
 
 
