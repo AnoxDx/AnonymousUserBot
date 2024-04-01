@@ -1,13 +1,11 @@
 import asyncio
-
 from prettytable import PrettyTable
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
-
-from Anonymous import Ano, CMD_HELP
+from Anonymous import app, CMD_HELP
 from Anonymous.helper.Pyt import ReplyCheck
 from Anonymous.helper.utility import split_list
-
+Ano
 
 async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
     xyz = (
@@ -17,17 +15,17 @@ async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
     )
     return await xyz(*args, **kwargs)
 
-@Ano.on_message(filters.command(["help", "helpme"], ".") & filters.me)
+@app.on_message(filters.command(["help", "helpme"], ".") & filters.me)
 async def module_help(client: Client, message: Message):
     cmd = message.command
     help_arg = ""
-    bot_username = (await Ano.get_me()).username
+    bot_username = (await app.get_me()).username
     if len(cmd) > 1:
         help_arg = " ".join(cmd[1:])
     elif not message.reply_to_message and len(cmd) == 1:
         await message.edit("⚡️")
         try:
-            nice = await Ano.get_inline_bot_results(bot=bot_username, query="helper")
+            nice = await app.get_inline_bot_results(bot=bot_username, query="helper")
             await asyncio.gather(
                 message.delete(),
                 client.send_inline_bot_result(
@@ -42,7 +40,7 @@ async def module_help(client: Client, message: Message):
             ac.align = "l"
             for x in split_list(sorted(CMD_HELP.keys()), 2):
                 ac.add_row([x[0], x[1] if len(x) >= 2 else None])
-            xx = await Ano.send_message(
+            xx = await app.send_message(
                 message.chat.id,
                 f"```{str(ac)}```\n< @BotsDom >",
                 reply_to_message_id=ReplyCheck(message),
@@ -69,7 +67,7 @@ async def module_help(client: Client, message: Message):
             )
 
 
-@Ano.on_message(filters.command(["plugins", "modules"], ".") & filters.me)
+@app.on_message(filters.command(["plugins", "modules"], ".") & filters.me)
 async def module_helper(client: Client, message: Message):
     cmd = message.command
     help_arg = ""
