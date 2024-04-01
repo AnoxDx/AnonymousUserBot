@@ -2,6 +2,7 @@ from Anonymous import app
 from pyrogram.types import Message
 from pyrogram import filters, Client
 from Anonymous.modules.help import add_help_cmd
+from Anonymous import SUDO_USER
 
 
 @Client.on_message(filters.command(["react"], ".") & filters.me | filters.user(SUDO_USER))
