@@ -13,3 +13,4 @@ OWNER_ID = getenv("OWNER_ID")
 MONGO_URL = getenv("MONGO_URL")
 BOT_TOKEN = getenv("BOT_TOKEN")
 LOG_GROUP = '@EvoniXZone'
+PM_LOGGER = LOG_GROUP
