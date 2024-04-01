@@ -116,6 +116,6 @@ def add_help_cmd(module_name, commands):
     for x in commands:
         for y in x:
             if y is not x:
-                command_dict[x[0]] = x[1]
+               command_dict[x[0]] = x[1]
 
     CMD_HELP[module_name] = command_dict
