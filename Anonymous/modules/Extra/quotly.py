@@ -4,7 +4,6 @@ from Anonymous import app, SUDO_USER
 from pyrogram import Client, filters
 
 
-@app.on_cmd(
 @Client.on_message(filters.me & filters.command(["q", "quotly"], "."))
 async def quotly(client: Client, message: Message):
         reply = message.reply_to_message
