@@ -8,7 +8,7 @@ StartTime = time.time()
 START_TIME = datetime.now()
 CMD_HELP = {}
 clients = []
-ids = []
+accounts = []
 
 SUDO_USER = OWNER_ID
 aiosession = ClientSession() 
