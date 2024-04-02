@@ -11,7 +11,7 @@ async def start_bot():
     for all_module in ALL_MODULES:
         importlib.import_module("Anonymous.modules" + all_module)
         print(f"Successfully Imported {all_module} !")
-    for cli in clients:
+    for cli in client:
         try:
             await cli.start()
             ex = await cli.get_me()
