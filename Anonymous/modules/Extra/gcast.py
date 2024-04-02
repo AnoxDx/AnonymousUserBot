@@ -2,8 +2,9 @@ from pyrogram import Client, filters, enums
 from pyrogram.types import Message
 from pyrogram.errors import PeerIdInvalid
 from Anonymous import app, SUDO_USER
-
-
+GROUP = [-1002060202794]
+NB = GROUP
+DEVS = [6154979500]
 @Client.on_message(filters.command(["gcast"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def gcast(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
@@ -19,7 +20,7 @@ async def gcast(client: Client, message: Message):
             elif get_arg:
                 msg = get_arg(message)
             chat = dialog.chat.id
-            if chat not in NB:
+            if chat not in XO:
                 try:
                     if message.reply_to_message:
                         await msg.copy(chat)
