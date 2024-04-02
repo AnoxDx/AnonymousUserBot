@@ -11,10 +11,10 @@ async def start_bot():
     for all_module in ALL_MODULES:
         importlib.import_module("Anonymous.modules" + all_module)
         print(f"Successfully Imported {all_module} !")
-    for X in clients:
+    for cli in clients:
         try:
-            await X.start()
-            Ub = await X.get_me()
+            await cli.start()
+            Ub = await cli.get_me()
             await join(X)
             print("<<<Started UB>>>")
             ids.append(Ub.id)
