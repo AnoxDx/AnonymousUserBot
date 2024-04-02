@@ -6,24 +6,6 @@ from Anonymous import app, SUDO_USER
 from pyrogram import Client, filters
 
 
-# animations
-data = [
-    "🕜",
-    "🕡",
-    "🕦",
-    "🕣",
-    "🕥",
-    "🕧",
-    "🕓",
-    "🕔",
-    "🕒",
-    "🕑",
-    "🕐"
-]
-
-pings = []
-
-
 @Client.on_message(filters.command(["ping"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def ping(client: Client, message: Message):
         if len(message.command) == 1:
