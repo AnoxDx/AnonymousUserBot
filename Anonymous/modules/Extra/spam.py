@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from Anonymous import SUDO_USER
 from Anonymous import app
-from main.core.enums import UserType
+from Anonymous.helper import UserType
 
 
 @Client.on_message(filters.command(["spam"], ".") & (filters.me | filters.user(SUDO_USER)))
