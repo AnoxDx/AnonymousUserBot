@@ -32,7 +32,7 @@ async def spam_handler(client: Client, message: Message):
             times = int(cmd[1]) if cmd[1].isdigit() else 0
             spam_msg = reply.id
             for _ in range(times):
-                await message.copy_message(
+                await app.copy_message(
                     message.chat.id,
                     message.chat.id,
                     spam_msg
