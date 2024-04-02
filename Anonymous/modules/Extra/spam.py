@@ -46,7 +46,7 @@ async def spam_handler(client: Client, message: Message):
     filters.command(["dspam", "delayspam"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def delayspam_handler(client: Client, message: Message):
-        reply = m.reply_to_message
+        reply = message.reply_to_message
         cmd = message.command
         if client.long() < 3:
             await client.send_edit(
