@@ -17,7 +17,7 @@ async def quotly(client: Client, message: Message):
 
         msg_one = await message.edit_text("Making a Quote . . .")
         await client.send_message("QuotLyBot", f"/qcolor {color}")
-        await reply.forward("QuotLyBot")
+        await message.reply_to_message.forward(bot)
         is_sticker = True
         while is_sticker:
             try:
