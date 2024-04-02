@@ -2,6 +2,7 @@ from pyrogram.types import Message
 from pyrogram.enums import ChatType
 from pyrogram import Client, filters
 from Anonymous import app
+from Anonymous.helper.Pyt import ReplyCheck
 
 @Client.on_message(filters.command(["stats"], ".") & filters.me)
 async def stats(client: Client, message: Message):
@@ -34,4 +35,6 @@ async def stats(client: Client, message: Message):
 
         await client.send_edit(stats_format.format(client.UserMention(), bot, user, group, channel))
     except Exception as e:
-        await client.error(e)
+        return await client.send_message(
+            message.chat.id, f"**INFO:** `{e}`", reply_to_message_id=ReplyCheck(message)
+        )
