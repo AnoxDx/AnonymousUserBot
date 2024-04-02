@@ -9,7 +9,7 @@ from pyrogram.types import Message
 FLOOD_CTRL = 0
 ALLOWED = []
 USERS_AND_WARNS = {}
-
+PM_IMG = 'https://telegra.ph//file/02469a3da0b5840bd9fe5.mp4'
 
 async def denied_users(filter, client: Client, message: Message):
     if not await pm_guard():
@@ -100,7 +100,7 @@ async def reply_pm(app: Client, message):
             chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
         ):
             await message.delete()
-        await message.reply_photo(photo='https://telegra.ph//file/02469a3da0b5840bd9fe5.mp4', caption=pm_message)
+        await message.reply_photo(photo=PM_IMG, caption=pm_message)
         return
     await message.reply(block_message, disable_web_page_preview=True)
     await app.block_user(message.chat.id)
