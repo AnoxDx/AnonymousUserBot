@@ -35,7 +35,7 @@ async def setpmmsg(client, message):
     await message.edit("**Custom anti-pm message set**")
 
 
-add_command_help(
+add_help_cmd(
     "antipm",
     [
         [".pmguard [on or off]", " -> Activates or deactivates anti-pm."],
