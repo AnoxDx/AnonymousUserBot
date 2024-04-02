@@ -2,8 +2,8 @@ from Anonymous.database import cli
 import asyncio
 
 collection = cli["AnoX"]["pmpermit"]
-
-PMPERMIT_MESSAGE = (
+PM_IMG = 'https://telegra.ph//file/02469a3da0b5840bd9fe5.mp4'
+PM_MESSAGE = (
     "**⚠️ Warning ⚠️\n\n**"
     "This is AmaX UserBot Pm Guard Security !\n"
     "Its kindly request not to spam & wait patiently!.\n\nMy Master is Busy ! Wait While They Gets Your Update !\n\n"
