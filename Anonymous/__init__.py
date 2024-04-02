@@ -22,7 +22,7 @@ app = Client(
     in_memory=True,
 )
 
-clientX = Client(
+clients = Client(
     name="pyrocli", 
     api_id=API_ID, 
     api_hash=API_HASH, 
