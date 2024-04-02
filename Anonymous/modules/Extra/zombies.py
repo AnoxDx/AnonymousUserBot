@@ -25,7 +25,7 @@ async def zombies(client: Client, message: Message):
             await message.edit_text("No deleted accounts found.\nGroup is clean as Hell ! 😃")
 
     elif len(message.command) == 2 and message.command[1] == "clean":
-        await message.edit_text("Cleaning deleted accounts . . .", text_type=["mono"])
+        await message.edit_text("Cleaning deleted accounts . . .")
 
         async for x in client.get_chat_members(chat_id=message.chat.id):
             if x.user.is_deleted:
