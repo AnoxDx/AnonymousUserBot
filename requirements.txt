@@ -16,3 +16,4 @@ aiohttp
 aiofiles
 gitpython
 Wikipedia-API
+deep-translator==1.8.3
