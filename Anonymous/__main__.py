@@ -3,7 +3,7 @@ import importlib
 from pyrogram import Client, idle
 from Anonymous.helper import join
 from Anonymous.modules import ALL_MODULES
-from Anonymous import clients, app, ids
+from Anonymous import client, app, ids
 
 async def start_bot():
     await app.start()
