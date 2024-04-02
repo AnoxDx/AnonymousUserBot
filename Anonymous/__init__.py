@@ -3,7 +3,6 @@ from config import API_ID, API_HASH, OWNER_ID, BOT_TOKEN, STRING_SESSION
 from datetime import datetime
 import time
 from aiohttp import ClientSession
-import config
 
 StartTime = time.time()
 START_TIME = datetime.now()
@@ -11,7 +10,7 @@ CMD_HELP = {}
 clients = []
 ids = []
 
-SUDO_USER = config.OWNER_ID
+SUDO_USER = OWNER_ID
 aiosession = ClientSession() 
 
 app = Client(
