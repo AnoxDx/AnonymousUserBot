@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 gtl = GoogleTranslator()
 
 
-@Client.on_message(filters.command(["tr","tl"] ".") & filters.me)
+@Client.on_message(filters.command(["tr","tl"], ".") & filters.me)
 async def translate(client: Client, message: Message):
     reply = message.reply_to_message
     cmd = message.command
