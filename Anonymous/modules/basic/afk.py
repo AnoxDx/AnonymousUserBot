@@ -29,11 +29,9 @@ async def collect_afk_messages(bot: Client, message: Message):
 
         if GetChatID(message) not in CHAT_TYPE:
             text = (
-                f"`Beep boop. This is an automated message.\n"
-                f"I am not available right now.\n"
+                f"I'm busy right now\n"
+                f"Due to: ```{AFK_REASON.upper()}```\n"
                 f"Last seen: {last_seen}\n"
-                f"Reason: ```{AFK_REASON.upper()}```\n"
-                f"See you after I'm done doing whatever I'm doing.`"
             )
             await bot.send_message(
                 chat_id=GetChatID(message),
@@ -45,11 +43,7 @@ async def collect_afk_messages(bot: Client, message: Message):
         elif GetChatID(message) in CHAT_TYPE:
             if CHAT_TYPE[GetChatID(message)] == 50:
                 text = (
-                    f"`This is an automated message\n"
-                    f"Last seen: {last_seen}\n"
-                    f"This is the 10th time I've told you I'm AFK right now..\n"
-                    f"I'll get to you when I get to you.\n"
-                    f"No more auto messages for you`"
+                    f"`You Exceeded AFK automated message limit !\n\nNow You will no more Notified !`"
                 )
                 await bot.send_message(
                     chat_id=GetChatID(message),
@@ -60,10 +54,7 @@ async def collect_afk_messages(bot: Client, message: Message):
                 return
             elif CHAT_TYPE[GetChatID(message)] % 5 == 0:
                 text = (
-                    f"`Hey I'm still not back yet.\n"
-                    f"Last seen: {last_seen}\n"
-                    f"Still busy: ```{AFK_REASON.upper()}```\n"
-                    f"Try pinging a bit later.`"
+                    f"`Master is still busy`"
                 )
                 await bot.send_message(
                     chat_id=GetChatID(message),
@@ -93,7 +84,7 @@ async def afk_set(bot: Client, message: Message):
     await message.delete()
 
 
-@Client.on_message(filters.command("afk", "!") & filters.me, group=3)
+@Client.on_message(filters.command("back", ".") & filters.me, group=3)
 async def afk_unset(bot: Client, message: Message):
     global AFK, AFK_TIME, AFK_REASON, USERS, GROUPS
 
@@ -135,7 +126,7 @@ if AFK:
 add_help_cmd(
     "afk",
     [
-        [".afk", "Activates AFK mode with reason as anything after .afk\nUsage: ```.afk <reason>```"],
-        ["!afk", "Deactivates AFK mode."],
+        [".afk", "Activates AFK mode !\n**Usage**:\n ```.afk <reason>```"],
+        [".back", "Deactivates AFK mode."],
     ],
 )
