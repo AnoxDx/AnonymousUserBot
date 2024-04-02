@@ -7,9 +7,9 @@ from Anonymous import app
 
 @Client.on_message(filters.command(["spam"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def spam_handler(client: Client, message: Message):
-        reply = client.reply_to_message
+        reply = message.reply_to_message
         reply_to_id = reply.id if reply else None
-        cmd = client.text.split(None, 2)
+        cmd = message.text.split(None, 2)
         if not reply and app.long() == 1:
             await message.edit_text(
                 "Reply or give me count & spam text after command.",
@@ -33,7 +33,7 @@ async def spam_handler(client: Client, message: Message):
             times = int(cmd[1]) if cmd[1].isdigit() else 0
             spam_msg = reply.id
             for _ in range(times):
-                await client.copy_message(
+                await message.copy_message(
                     message.chat.id,
                     message.chat.id,
                     spam_msg
