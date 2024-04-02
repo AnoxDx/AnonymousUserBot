@@ -6,7 +6,7 @@ PM_MESSAGE = (
     "**⚠️ WARNING ⚠️\n\n**"
     "`This is AmaX UserBot Pm Guard Security !\n"
     "Its kindly request not to spam & wait patiently!.\n\nMy Master is Busy ! Wait While They Gets Your Update !\n\n`"
-    "**:<u> Spam </u> = <u> Block </u> So Be Patience !**"
+    "**⌛<u> Spam </u> = <u> Block </u> So Be Patience !**"
 )
 BLOCKED = "**I already warned you! Now you Blocked**"
 LIMIT = 5
