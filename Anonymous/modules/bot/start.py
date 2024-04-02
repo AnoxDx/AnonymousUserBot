@@ -4,7 +4,7 @@ import asyncio
 import time
 from pyrogram import *
 from pyrogram.types import * 
-from Anonymous import app, SUDO-USER
+from Anonymous import app, SUDO_USER
 from pyrogram import filters, Client
 
 
