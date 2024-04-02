@@ -5,7 +5,6 @@ import time
 from pyrogram import *
 from pyrogram.types import * 
 from Anonymous import app
-from config import OWNER_ID
 from pyrogram import filters
 
 
