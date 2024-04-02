@@ -10,19 +10,18 @@ async def translate(client: Client, message: Message):
     reply = message.reply_to_message
     cmd = message.command
     oldmsg = message
-
     try:
         lang = cmd[1] if len(message.command) > 1 else "en"
         await message.edit_text(f"**Translating in** `{lang}` . . .")
         languages = list((gtl.get_supported_languages(as_dict=True)).values())
         if not lang in languages:
-            return await message.edit_text("Bot doesn't support this language code, please try different one.", text_type=["mono"], delme=4)
+            return await message.edit_text("Bot doesn't support this language code, please try different one")
         if (reply and reply.text):
             tdata = await translate(lang=lang, text=reply.text)
             await message.edit_text(f"**Translated to:** `{lang}`\n\n**Text: **`{tdata}`")
         elif not reply and app.textlen(oldmsg) <= 4096:
             if len(message.command) <= 2:
-                return await message.edit_text("Give me the language code with text to translate.", text_type=["mono"], delme=4)
+                return await message.edit_text("Give me the language code with text to translate.")
             text = m.text.split(None, 2)[2]
             tdata = await translate(lang=lang, text=text)
             await message.edit_text(f"**Translated to:** `{lang}`\n\n**Text:** `{tdata}`")
