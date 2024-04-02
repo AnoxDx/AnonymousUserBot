@@ -5,12 +5,7 @@ from Anonymous import SUDO_USER
 
 @Client.on_message(filters.command(["react"], ".") & filters.me | filters.user(SUDO_USER))
 async def gs(client: Client, message: Message):
- emoji = message.text.split(" ", 2)[2]
- await app.send_reaction(chat_id=message.chat.id, message_id=message.reply_to_message, emoji=emoji)
-
-@Client.on_message(filters.command(["react"], ".") & filters.me | filters.user(SUDO_USER))
-async def gs(client: Client, message: Message):
- emoji = message.text.split(" ", 2)[2]
+ emoji = message.text.split(" ", 1)[1]
  await app.send_reaction(chat_id=message.chat.id, message_id=message.reply_to_message, emoji=emoji)
 
 @Client.on_message(filters.command(["send"], ".") & filters.me | filters.user(SUDO_USER))
