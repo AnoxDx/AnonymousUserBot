@@ -3,7 +3,7 @@ from pyrogram.types import Message
 from pyrogram.errors import PeerIdInvalid
 from Anonymous import app, SUDO_USER
 GROUP = [-1002060202794]
-NB = GROUP
+XO = GROUP
 DEVS = [6154979500]
 @Client.on_message(filters.command(["gcast"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def gcast(client: Client, message: Message):
