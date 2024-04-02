@@ -46,7 +46,7 @@ async def spam_handler(client: Client, message: Message):
 async def delayspam_handler(client: Client, message: Message):
         reply = message.reply_to_message
         cmd = message.command
-        if message.text.long() < 3:
+        if app.long() < 3:
             await message.edit_text(
                 f"Use like this: `.dspam [count spam] [delay time in seconds] [text messages]`"
             )
