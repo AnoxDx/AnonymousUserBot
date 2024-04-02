@@ -5,7 +5,7 @@ from Anonymous.modules.help import *
 from pyrogram.methods import messages
 from .pm import get_arg, denied_users
 
-import Anonymous.database.pmpermitdb as Ano
+import Anonymous.database.pmpermit as Ano
 
 
 
