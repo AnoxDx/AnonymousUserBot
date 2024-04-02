@@ -2,18 +2,14 @@ from Anonymous.database import cli
 import asyncio
 
 collection = cli["AnoX"]["pmpermit"]
-PM_IMG = 'https://telegra.ph//file/02469a3da0b5840bd9fe5.mp4'
 PM_MESSAGE = (
-    "**⚠️ Warning ⚠️\n\n**"
+    "**⚠️ WARNING ⚠️\n\n**"
     "This is AmaX UserBot Pm Guard Security !\n"
     "Its kindly request not to spam & wait patiently!.\n\nMy Master is Busy ! Wait While They Gets Your Update !\n\n"
     "**<u> Spam </u> = <u> Block </u> So Be Patience !**"
 )
-
 BLOCKED = "**I already warned you! Now you Blocked**"
-
 LIMIT = 5
-
 
 async def set_pm(value: bool):
     doc = {"_id": 1, "pmpermit": value}
