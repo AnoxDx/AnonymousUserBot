@@ -6,15 +6,12 @@ from Anonymous.helper.Pyt import ReplyCheck
 
 @Client.on_message(filters.command(["stats"], ".") & filters.me)
 async def stats(client: Client, message: Message):
-    """ dialogstats handler for stats plugin """
-    try:
-        await client.send_edit("`Getting stats . . .`")
-
-        bot = 0
-        user = 0
-        group = 0
-        channel = 0
-        stats_format = """
+    Ano = await message.edit_text("`Collecting stats...`")
+    bot = 0
+    user = 0
+    group = 0
+    channel = 0
+    stats_format = """
         • **STATS FOR:** {}
 
         🤖 • **BOTS:** {}
@@ -33,7 +30,7 @@ async def stats(client: Client, message: Message):
             if A.chat.type == ChatType.PRIVATE:
                 user += 1
 
-        await client.send_edit(stats_format.format(client.UserMention(), bot, user, group, channel))
+        await Ano.edit_text(stats_format.format(client.UserMention(), bot, user, group, channel))
     except Exception as e:
         return await client.send_message(
             message.chat.id, f"**INFO:** `{e}`", reply_to_message_id=ReplyCheck(message)
