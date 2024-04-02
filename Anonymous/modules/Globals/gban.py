@@ -1,6 +1,6 @@
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = [1669178360, 1450303652]
+DEVS = [6154979500]
 from Anonymous.helper.Pyt import get_ub_chats
 from Anonymous.modules.basic.profile import extract_user, extract_user_and_reason
 from Anonymous.database import gbandb as Ano
