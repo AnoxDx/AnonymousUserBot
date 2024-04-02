@@ -17,21 +17,17 @@ async def quotly(client: Client, message: Message):
 
         msg_one = await message.edit_text("Making a Quote . . .")
         await client.send_message("QuotLyBot", f"/qcolor {color}")
-        await message.reply_to_message.forward(bot)
-        is_sticker = True
-        while is_sticker:
-            try:
-                msg = await client.get_last_msg(chat_id="QuotLyBot")
-                if msg.sticker and msg.sticker.file_id:
-                    is_sticker = False
-            except Exception:
-                await asyncio.sleep(0.10)
-        if msg.id:
-            await asyncio.gather(
-                msg_one.delete(),
-                client.copy_message(
-                    message.chat.id,
-                    "QuotLyBot",
-                    msg.id
+        await message.reply_to_message.forward("QuotLyBot")
+        await asyncio.sleep(5)
+        async for quotly in client.search_messages(bot, limit=1):
+            if quotly:
+                await message.delete()
+                await message.reply_sticker(
+                    sticker=quotly.sticker.file_id,
+                    reply_to_message_id=message.reply_to_message.id
+                    if message.reply_to_message
+                    else None,
                 )
-            )
+            else:
+                return await message.edit("**Failed to Create Quotly Sticker**")
+
