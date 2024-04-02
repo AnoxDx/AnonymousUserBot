@@ -19,7 +19,7 @@ async def quotly(client: Client, message: Message):
         await client.send_message("QuotLyBot", f"/qcolor {color}")
         await message.reply_to_message.forward("QuotLyBot")
         await asyncio.sleep(5)
-        async for quotly in client.search_messages(bot, limit=1):
+        async for quotly in client.search_messages("QuotLyBot", limit=1):
             if quotly:
                 await message.delete()
                 await message.reply_sticker(
