@@ -12,22 +12,7 @@ clients = []
 ids = []
 
 SUDO_USER = config.OWNER_ID
-aiosession = ClientSession()
-
-if API_ID:
-   API_ID = API_ID
-else:
-   print("WARNING: API ID NOT FOUND USING AMAX API ⚡")
-   API_ID = "6435225"
-
-if API_HASH:
-   API_HASH = API_HASH
-else:
-   print("WARNING: API HASH NOT FOUND USING AMAX API ⚡")   
-   API_HASH = "4e984ea35f854762dcde906dce426c2d"
-
-if not BOT_TOKEN:
-   print("WARNING: BOT TOKEN NOT FOUND PLZ ADD ⚡")   
+aiosession = ClientSession() 
 
 app = Client(
     name="app",
@@ -39,4 +24,4 @@ app = Client(
 
 if STRING_SESSION:
    print("Client: Found.. Starting..📳")
-   client = Client(name="one", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION, plugins=dict(root="Anonymous/modules"))
+   client = Client(name="pyrocli", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION, plugins=dict(root="Anonymous/modules"))
