@@ -88,7 +88,7 @@ async def ungban_user(client: Client, message: Message):
                 er += 1
         await Ano.ungban_user(user.id)
         msg = (
-            r"**\\#UnGbanned_User//**"
+            r"**<u>UnGbanned_User</u>**"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})"
             f"\n**User ID:** `{user.id}`"
         )
