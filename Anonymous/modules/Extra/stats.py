@@ -20,18 +20,18 @@ async def stats(client: Client, message: Message):
         ⚙️ • **CHANNELS:** {}
         """
 
-        async for A in client.get_dialogs():
-            if A.chat.type == ChatType.CHANNEL:
-                channel += 1
-            if A.chat.type == ChatType.BOT:
-                bot += 1
-            if A.chat.type in (ChatType.SUPERGROUP, ChatType.GROUP):
-                group += 1
-            if A.chat.type == ChatType.PRIVATE:
-                user += 1
+    async for A in client.get_dialogs():
+        if A.chat.type == ChatType.CHANNEL:
+            channel += 1
+        if A.chat.type == ChatType.BOT:
+            bot += 1
+        if A.chat.type in (ChatType.SUPERGROUP, ChatType.GROUP):
+            group += 1
+        if A.chat.type == ChatType.PRIVATE:
+            user += 1
 
-        await Ano.edit_text(stats_format.format(client.UserMention(), bot, user, group, channel))
-    except Exception as e:
-        return await client.send_message(
-            message.chat.id, f"**INFO:** `{e}`", reply_to_message_id=ReplyCheck(message)
-        )
+    await Ano.edit_text(stats_format.format(client.UserMention(), bot, user, group, channel))
+except Exception as e:
+    return await client.send_message(
+        message.chat.id, f"**INFO:** `{e}`", reply_to_message_id=ReplyCheck(message)
+    )
