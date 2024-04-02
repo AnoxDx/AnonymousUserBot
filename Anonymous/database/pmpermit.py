@@ -5,7 +5,7 @@ collection = cli["AnoX"]["pmpermit"]
 
 PMPERMIT_MESSAGE = (
     "**Warning !⚠️...\n\n**"
-    "**This is AmaX UserBot Pm Guard Security !**"
+    "**This is AmaX UserBot Pm Guard Security !\n**"
     "**Its kindly request not to spam & wait patiently!.\n\nMy master is offline, wait while they turn-on!**"
     "**If you spam then i will block you !**"
 )
