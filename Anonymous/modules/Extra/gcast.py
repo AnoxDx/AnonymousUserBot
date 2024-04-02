@@ -6,28 +6,31 @@ from Anonymous import app, SUDO_USER
 
 @Client.on_message(filters.command(["gcast"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def gcast(client: Client, message: Message):
-    tlen = len(message.text.split())
-
-    if tlen == 1:
-        return await client.send_message(
-            message.from_user.id,
-            "Give me some broadcasting message."
-        )
-
-    text = message.text.split(None, 1)[1]
-    count = 0
-
-    for user_id in client.getdv("BOT STARTED"):
-        try:
-            await client.resolve_peer(user_id)
-            done = await client.send_message(user_id, text)
-            if done:
-                count += 1
-        except PeerIdInvalid:
-            pass
-    await client.send_message(
-        message.from_user.id,
-        f"Broadcast done, messages sent to {count} users."
+    if message.reply_to_message or get_arg(message):
+        tex = await message.reply_text("`Started global broadcast...`")
+    else:
+        return await message.edit_text("**Give A Message or Reply**")
+    done = 0
+    error = 0
+    async for dialog in client.get_dialogs():
+        if dialog.chat.type in (enums.ChatType.GROUP, enums.ChatType.SUPERGROUP):
+            if message.reply_to_message:
+                msg = message.reply_to_message
+            elif get_arg:
+                msg = get_arg(message)
+            chat = dialog.chat.id
+            if chat not in NB:
+                try:
+                    if message.reply_to_message:
+                        await msg.copy(chat)
+                    elif get_arg:
+                        await client.send_message(chat, msg)
+                    done += 1
+                    await asyncio.sleep(0.3)
+                except Exception:
+                    error += 1
+                    await asyncio.sleep(0.3)
+    await tex.edit_text(
+        f"**Successfully Sent Message To** `{done}` **Groups, chat, Failed to Send Message To** `{error}` **Groups**"
     )
-
 
