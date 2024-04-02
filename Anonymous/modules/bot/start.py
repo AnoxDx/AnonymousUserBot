@@ -13,7 +13,7 @@ START_TEXT = (
 )
 START_PIC = 'https://graph.org/file/e6a9b462dd5d020d2af57.jpg'
 
-@app.on_message(filters.command("start") & (filters.me | filters.user(SUDO_USER))
+@app.on_message(filters.command("start") & (filters.me | filters.user(SUDO_USER)))
 async def start(app, message):
     buttons = [
            [
