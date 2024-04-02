@@ -31,21 +31,3 @@ async def gcast(client: Client, message: Message):
     )
 
 
-
-
-@Client.on_message(
-    filters.command(filters.private, filters.me)
-)
-async def gcaststarted(client: Client, message: Message):
-    user = message.from_user
-    if user and message.text == "/start":
-        idlist = client.getdv("BOT_STARTED")
-        if idlist:
-            if message.from_user.id in idlist:
-                return
-
-            newvalue = str(idlist.append(user.id))
-        else:
-            newvalue = str([message.from_user.id])
-
-        client.setdv("BOT_STARTED", newvalue)
