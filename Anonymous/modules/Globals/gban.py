@@ -4,7 +4,7 @@ DEVS = [1669178360, 1450303652]
 from Anonymous.helper.Pyt import get_ub_chats
 from Anonymous.modules.basic.profile import extract_user, extract_user_and_reason
 from Anonymous.database import gbandb as Ano
-from Anonymous.modules.help import add_command_help
+from Anonymous.modules.help import *
 
 ok = []
 
