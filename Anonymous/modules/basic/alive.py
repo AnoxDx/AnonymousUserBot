@@ -11,7 +11,7 @@ from Anonymous.modules.help import add_help_cmd
 
 CMD_HELP = {}
 
-@Client.on_message(filters.command(["start"], ".") & (filters.me))
+@Client.on_message(filters.command(["alive"], ".") & (filters.me))
 async def start(client, message):
    X = await message.reply_text("**Starting...**")
    time.sleep(1.0)
@@ -20,8 +20,8 @@ async def start(client, message):
    await client.edit_message_text(chat_id=message.chat.id, message_id=X.id, text="**TADDAAA :**\n\nIt's Your Own UserBot\n**#AnonymousUserBot**")
 
 add_help_cmd(
-    "start",
+    "alive",
     [
-        [".start", "Check if bot is alive"]
+        [".alive", "Check if bot is alive"]
     ],
 )
