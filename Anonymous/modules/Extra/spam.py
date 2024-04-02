@@ -6,7 +6,6 @@ from Anonymous import app
 from main.core.enums import UserType
 
 
-
 @Client.on_message(filters.command(["spam"], ".") & (filters.me | filters.user(SUDO_USER)))
 async def spam_handler(client: Client, message: Message):
         reply = client.reply_to_message
@@ -51,7 +50,7 @@ async def delayspam_handler(client: Client, message: Message):
         cmd = message.command
         if client.long() < 3:
             await client.send_edit(
-                f"Use like this: `{app.Trigger()[0]}dspam [count spam] [delay time in seconds] [text messages]`"
+                f"Use like this: `.dspam [count spam] [delay time in seconds] [text messages]`"
             )
 
         elif app.long() > 2 and not reply:
