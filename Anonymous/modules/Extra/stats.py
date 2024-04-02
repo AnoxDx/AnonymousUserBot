@@ -12,7 +12,7 @@ async def stats(client: Client, message: Message):
     group = 0
     channel = 0
     stats_format = """
-        • **STATS FOR:** {}
+        • **STATS :**
 
         🤖 • **BOTS:** {}
         👨 • **USERS:** {}
@@ -30,4 +30,4 @@ async def stats(client: Client, message: Message):
         if A.chat.type == ChatType.PRIVATE:
             user += 1
 
-    await Ano.edit_text(stats_format.format(client.UserMention(), bot, user, group, channel))
+    await Ano.edit_text(stats_format.format(bot, user, group, channel))
