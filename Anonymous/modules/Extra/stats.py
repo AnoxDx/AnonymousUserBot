@@ -12,13 +12,15 @@ async def stats(client: Client, message: Message):
     group = 0
     channel = 0
     stats_format = """
-        • **STATS :**
+➨ **STATS :**
 
-        🤖 • **BOTS:** {}
-        👨 • **USERS:** {}
-        🛡️ • **GROUPS:** {}
-        ⚙️ • **CHANNELS:** {}
-        """
+➥ **BOTS:** {}
+➥ **USERS:** {}
+➥ **GROUPS:** {}
+➥ **CHANNELS:** {}
+
+**© Collected by [AmaX UserBot](https://t.me/TheAmaX) !**
+"""
 
     async for A in client.get_dialogs():
         if A.chat.type == ChatType.CHANNEL:
