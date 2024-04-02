@@ -19,10 +19,10 @@ async def translate(client: Client, message: Message):
         if (reply and reply.text):
             tdata = await translate(lang=lang, text=reply.text)
             await message.edit_text(f"**Translated to:** `{lang}`\n\n**Text: **`{tdata}`")
-        elif not reply and app.textlen(oldmsg) <= 4096:
+        elif not reply and client.textlen(oldmsg) <= 4096:
             if len(message.command) <= 2:
                 return await message.edit_text("Give me the language code with text to translate.")
-            text = m.text.split(None, 2)[2]
+            text = message.text.split(None, 2)[2]
             tdata = await translate(lang=lang, text=text)
             await message.edit_text(f"**Translated to:** `{lang}`\n\n**Text:** `{tdata}`")
         else:
