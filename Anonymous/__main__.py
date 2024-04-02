@@ -16,7 +16,7 @@ async def start_bot():
             await cli.start()
             ex = await cli.get_me()
             await join(cli)
-            print("<<<Started UB>>>")
+            print("Started !")
             ids.append(ex.id)
         except Exception as e:
             print(f"{e}")
