@@ -9,7 +9,7 @@ from pyrogram import filters, Client
 
 
 START_TEXT = (
-    f"**Hey {client.mention}  !\n\n>⚡ This is AmaX ! Your Assistant UB ! We are Glad to Assist You ⚡ \n\n<u>Thank You !</u>**"
+    f"**Hey Master!\n\n>⚡ This is AmaX ! Your Assistant UB ! We are Glad to Assist You ⚡ \n\n<u>Thank You !</u>**"
 )
 START_PIC = 'https://graph.org/file/e6a9b462dd5d020d2af57.jpg'
 
