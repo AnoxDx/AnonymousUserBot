@@ -14,10 +14,10 @@ async def start_bot():
     for cli in clients:
         try:
             await cli.start()
-            Ub = await cli.get_me()
+            ex = await cli.get_me()
             await join(cli)
             print("<<<Started UB>>>")
-            ids.append(Ub.id)
+            ids.append(ex.id)
         except Exception as e:
             print(f"{e}")
     await idle()
