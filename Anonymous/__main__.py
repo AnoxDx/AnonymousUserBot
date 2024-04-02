@@ -3,9 +3,9 @@ import importlib
 from pyrogram import Client, idle
 from Anonymous.helper import join
 from Anonymous.modules import ALL_MODULES
-from Anonymous import clients, app, ids
+from Anonymous import clients, app, accounts
 
-async def start_bot():
+async def run_bot():
     await app.start()
     print("started..")
     for all_module in ALL_MODULES:
@@ -17,10 +17,10 @@ async def start_bot():
             ex = await cli.get_me()
             await join(cli)
             print("Started !")
-            ids.append(ex.id)
+            accounts.append(ex.id)
         except Exception as e:
             print(f"{e}")
     await idle()
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(start_bot())
+loop.run_until_complete(run_bot())
