@@ -8,9 +8,6 @@ from Anonymous import app, SUDO_USER
 
 @Client.on_message(filters.command("zombies", ".") & filters.me)
 async def zombies(client: Client, message: Message):
-    if await client.check_private():
-        return
-
     temp_count = 0
     admin_count = 0
     count = 0
