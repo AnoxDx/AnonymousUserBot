@@ -8,6 +8,7 @@ import config
 StartTime = time.time()
 START_TIME = datetime.now()
 CMD_HELP = {}
+clients = []
 ids = []
 
 SUDO_USER = config.OWNER_ID
@@ -22,10 +23,7 @@ app = Client(
     in_memory=True,
 )
 
-clients = Client(
-    name="pyrocli", 
-    api_id=API_ID, 
-    api_hash=API_HASH, 
-    session_string=STRING_SESSION, 
-    plugins=dict(root="Anonymous/modules")
-)
+if STRING_SESSION:
+   client = Client(name="pyrocli", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION, plugins=dict(root="Anonymous/modules"))
+   clients.append(client)
+    
