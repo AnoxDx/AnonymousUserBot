@@ -7,7 +7,7 @@ from time import time
 from pyrogram import Client, filters, enums
 from pyrogram.types import Message
 from Anonymous import SUDO_USER
-from Anonymous.helper.PyroHelpers import ReplyCheck
+from Anonymous.helper.Pyt import ReplyCheck
 from Anonymous.modules.help import add_help_cmd
 
 flood = {}
