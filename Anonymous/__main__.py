@@ -3,7 +3,7 @@ import importlib
 from pyrogram import Client, idle
 from Anonymous.helper import join
 from Anonymous.modules import ALL_MODULES
-from Anonymous import client, app, ids
+from Anonymous import clientX, app, ids
 
 async def start_bot():
     await app.start()
@@ -11,7 +11,7 @@ async def start_bot():
     for all_module in ALL_MODULES:
         importlib.import_module("Anonymous.modules" + all_module)
         print(f"Successfully Imported {all_module} !")
-    for cli in client:
+    for cli in clientX:
         try:
             await cli.start()
             ex = await cli.get_me()
