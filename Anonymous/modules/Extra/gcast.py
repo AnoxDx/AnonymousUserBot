@@ -1,4 +1,4 @@
-from pyrogram import Clients, filters
+from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import PeerIdInvalid
 from Anonymous import app, SUDO_USER
