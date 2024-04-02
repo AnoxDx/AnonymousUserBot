@@ -31,7 +31,7 @@ async def stats(client: Client, message: Message):
             user += 1
 
     await Ano.edit_text(stats_format.format(client.UserMention(), bot, user, group, channel))
- except Exception as e:
+   except Exception as e:
     return await client.send_message(
         message.chat.id, f"**INFO:** `{e}`", reply_to_message_id=ReplyCheck(message)
     )
