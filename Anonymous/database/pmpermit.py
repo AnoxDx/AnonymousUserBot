@@ -4,8 +4,8 @@ import asyncio
 collection = cli["AnoX"]["pmpermit"]
 PM_MESSAGE = (
     "**⚠️ WARNING ⚠️\n\n**"
-    "`This is AmaX UserBot Pm Guard Security !\n"
-    "Its kindly request not to spam & wait patiently!.\n\nMy Master is Busy ! Wait While They Gets Your Update !\n\n`"
+    "**This is AmaX UserBot Pm Guard Security !\n"
+    "Its kindly request not to spam & wait patiently !**\n\n`My Master is Busy ! Wait While They Gets Your Update !\n\n`"
     "**⌛<u> Spam </u> = <u> Block </u> So Be Patience !**"
 )
 BLOCKED = "**I already warned you! Now you Blocked**"
