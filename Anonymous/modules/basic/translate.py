@@ -36,7 +36,7 @@ async def translate(lang, text):
     tr = GoogleTranslator(source="auto", target=lang)
     return tr.translate(text)
 
-@Client.on_message(filters.command(["thelp","tlhelp"] ".") & filters.me)
+@Client.on_message(filters.command(["thelp","tlhelp"], ".") & filters.me)
 async def translatehelp(client: Client, message: Message):
     data = []
     data.clear()
