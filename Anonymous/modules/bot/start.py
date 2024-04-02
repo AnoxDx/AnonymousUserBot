@@ -25,4 +25,4 @@ async def hello(client: app, message):
             ],
             ]
     markups = InlineKeyboardMarkup(buttons)
-    await client.send_photo(message.chat.id, START_PIC, caption=START_TEXT, reply_markup=markups)
+    await app.send_photo(message.chat.id, START_PIC, caption=START_TEXT, reply_markup=markups)
