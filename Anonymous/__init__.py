@@ -1,5 +1,5 @@
 from pyrogram import Client
-from config import API_ID, API_HASH, OWNER_ID, BOT_TOKEN
+from config import API_ID, API_HASH, OWNER_ID, BOT_TOKEN, STRING_SESSION
 from datetime import datetime
 import time
 from aiohttp import ClientSession
