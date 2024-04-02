@@ -3,7 +3,7 @@ from pyrogram.enums import ChatType
 from pyrogram import Client, filters
 from Anonymous import app
 
-@Client.on_message(filters.command(["stats"], ".") & filters.me | filters.user(SUDO_USER))
+@Client.on_message(filters.command(["stats"], ".") & filters.me)
 async def stats(client: Client, message: Message):
     """ dialogstats handler for stats plugin """
     try:
