@@ -10,12 +10,12 @@ from Anonymous.helper.utility import split_list
 
 
 async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
-    xyz = (
+    wew = (
         message.edit_text
         if bool(message.from_user and message.from_user.is_self or message.outgoing)
         else (message.reply_to_message or message).reply_text
     )
-    return await xyz(*args, **kwargs)
+    return await wew(*args, **kwargs)
 
 @Client.on_message(filters.command(["help", "helpme"], ".") & filters.me)
 async def module_help(client: Client, message: Message):
@@ -42,12 +42,12 @@ async def module_help(client: Client, message: Message):
             ac.align = "l"
             for x in split_list(sorted(CMD_HELP.keys()), 2):
                 ac.add_row([x[0], x[1] if len(x) >= 2 else None])
-            xx = await client.send_message(
+            an = await client.send_message(
                 message.chat.id,
                 f"```{str(ac)}```\n• @BotsDom •",
                 reply_to_message_id=ReplyCheck(message),
             )
-            await xx.reply(
+            await an.reply(
                 f"**Usage:** `.help broadcast` **To View Usage**"
             )
             return
