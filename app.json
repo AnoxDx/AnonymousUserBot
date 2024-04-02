@@ -26,6 +26,18 @@
         "STRING_SESSION": {
             "description": "String session of Pyrogram.",
             "value": ""
+        },
+        "OWNER_ID": {
+            "description": "String session of Pyrogram.",
+            "value": ""
+        },,
+        "LOG_GROUP": {
+            "description": "String session of Pyrogram.",
+            "value": ""
+        },
+        "PM_LOGGER": {
+            "description": "String session of Pyrogram.",
+            "value": ""
         }
     },
     "buildpacks": [
