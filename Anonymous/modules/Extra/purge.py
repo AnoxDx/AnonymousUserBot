@@ -68,10 +68,8 @@ async def purgeme(client: Client, message: Message):
 
 
 
-@Client.on_message(
-    filters.command(["del"], ".") & (filters.me | filters.user(SUDO_USER))
-)
-async def del(client: Client, message: Message):
+@Client.on_message(filters.command(["del", "delme"], ".") & (filters.me | filters.user(SUDO_USER)))
+async def delme(client: Client, message: Message):
     reply = message.reply_to_message
     msg_ids = [message.id, reply.id] if reply else [message.id]
     try:
