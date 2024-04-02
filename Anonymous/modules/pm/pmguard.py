@@ -28,7 +28,7 @@ async def setpmmsg(client, message):
         await message.edit("**What message to set**")
         return
     if arg == "default":
-        await Ano.set_permit_message(Ano.PMPERMIT_MESSAGE)
+        await Ano.set_permit_message(Ano.PM_MESSAGE)
         await message.edit("**Anti_PM message set to default**.")
         return
     await Ano.set_permit_message(f"`{arg}`")
