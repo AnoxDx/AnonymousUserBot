@@ -316,3 +316,4 @@ add_help_cmd(
             "Untuk mengubah foto profil grup",
         ],
     ],
+)
