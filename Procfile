@@ -1,1 +1,1 @@
-worker: python3 -m Anonymous
+worker: bash AmaX
