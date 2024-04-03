@@ -10,7 +10,7 @@ from pyrogram import Client, filters
 async def ping(client: Client, message: Message):
         if len(message.command) == 1:
             start = datetime.now()
-            await message.edit_text(". . .")
+            await message.reply_text(". . .")
             end = datetime.now()
             m_s = (end - start).microseconds / 1000
             await message.edit_text(
