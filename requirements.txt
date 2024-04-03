@@ -3,7 +3,7 @@ pyrogram
 tgcrypto
 python-dotenv
 pyromod
-motor==3.0.0
+motor
 pyyaml
 requests
 speedtest-cli
@@ -15,5 +15,4 @@ telegraph
 aiohttp
 aiofiles
 gitpython
-Wikipedia-API
 deep-translator==1.8.3
