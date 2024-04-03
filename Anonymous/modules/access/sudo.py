@@ -7,8 +7,10 @@ from Anonymous import SUDO_USER
 from config import OWNER_ID
 from Anonymous.modules.help import add_help_cmd
 
+ok = []
+
 @Client.on_message(filters.command(["sudolist"], ".") & filters.me)
-async def gbanlist(client: Client, message: Message):
+async def sudolist(client: Client, message: Message):
     users = (SUDO_USER)
     ex = await message.reply_text("`Processing...`")
     if not users:
@@ -22,7 +24,7 @@ async def gbanlist(client: Client, message: Message):
 
 
 @Client.on_message(filters.command(["addsudo"], ".") & filters.user(OWNER_ID))
-async def gmute_user(client: Client, message: Message):
+async def addsudo(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
     ex = await message.reply_text("`Processing...`")
@@ -53,7 +55,7 @@ async def gmute_user(client: Client, message: Message):
 
 
 @Client.on_message(filters.command(["rmsudo"], ".") & filters.user(OWNER_ID))
-async def gmute_user(client: Client, message: Message):
+async def rmsudo(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
     ex = await message.reply_text("`Processing...`")
