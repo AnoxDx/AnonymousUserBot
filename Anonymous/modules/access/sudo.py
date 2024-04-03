@@ -5,7 +5,7 @@ from Anonymous.helper.Pyt import get_ub_chats
 from Anonymous.modules.basic.profile import extract_user, extract_user_and_reason
 from Anonymous import SUDO_USER
 from config import OWNER_ID
-from Anonymous.modules.help import add_command_help
+from Anonymous.modules.help import add_help_cmd
 
 @Client.on_message(filters.command("sudolist", ".") & filters.me)
 async def gbanlist(client: Client, message: Message):
