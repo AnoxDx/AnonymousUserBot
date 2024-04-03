@@ -28,12 +28,12 @@ async def start(app, message):
     await app.send_photo(message.chat.id, START_PIC, caption=START_TEXT, reply_markup=InlineKeyboardMarkup(buttons))
 @app.on_callback_query()
 async def callback_query(Client, CallbackQuery):
-PAGE_BUTTONS = [
+ PAGE_BUTTONS = [
         [
             InlineKeyboardButton("Source Repo", url="https://github.com/AnoxDx/AnonymousUserBot"),
             InlineKeyboardButton('⟲ ʙᴀᴄᴋ', callback_data="OKBHAY")
         ]
-]
+ ]
      if CallbackQuery.data == "HELP":
         await CallbackQuery.edit_message_text(
             PAGE_TEXT,
