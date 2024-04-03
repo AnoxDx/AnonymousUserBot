@@ -15,7 +15,6 @@ from Anonymous.modules.help import add_help_cmd
 
 alive_logo = ("https://telegra.ph//file/02469a3da0b5840bd9fe5.mp4") 
 StartTime = time.time()
-START_TIME = datetime.now()
 
 @Client.on_message(filters.command(["alive", "awake"], ".") & filters.me)
 async def alive(client: Client, message: Message):
