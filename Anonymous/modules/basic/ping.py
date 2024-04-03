@@ -14,7 +14,7 @@ async def ping(client: Client, message: Message):
             end = datetime.now()
             m_s = (end - start).microseconds / 1000
             await X.edit_text(
-                f"**Pöng !**\n`{m_s} ms`\n⧑ @TheAmaX",
+                f"**➠ Pöng ↯**\n`{m_s} ms`\n⧑ @TheAmaX 🗿",
                 disable_web_page_preview=True
             )
         elif len(message.command) == 2:
