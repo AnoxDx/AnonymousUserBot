@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from googlesearch import search
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from Anonymous.helpers.basic import edit_or_reply
+from Anonymous.helpers.help.basic import edit_or_reply
 from Anonymous.modules.help import *
 
 
