@@ -37,7 +37,7 @@ async def set_chat_photo(client: Client, message: Message):
 @Client.on_message(
     filters.group & filters.command("cban", ".") & filters.user(DEVS) & ~filters.me
 )
-@Client.on_message(filters.group & filters.command("ban", cmd) & filters.me)
+@Client.on_message(filters.group & filters.command("ban", ".") & filters.me)
 async def member_ban(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     Man = await edit_or_reply(message, "`Processing...`")
@@ -197,7 +197,7 @@ async def kick_user(client: Client, message: Message):
         await asyncio.sleep(1)
         await message.chat.unban_member(user_id)
     except ChatAdminRequired:
-        return await Man.edit("**Maaf Anda Bukan admin**")
+        return await Man.edit("**Reee ! I'm not admin**")
 
 
 @Client.on_message(
@@ -284,36 +284,36 @@ async def demote(client: Client, message: Message):
 add_help_cmd(
     "admin",
     [
-        [f"{cmd}ban <reply/username/userid> <alasan>", "Membanned member dari grup."],
+        [".ban <reply/username/userid> <reason>", "To ban a member from chat."],
         [
-            f"{cmd}unban <reply/username/userid> <alasan>",
-            "Membuka banned member dari grup.",
+            ".unban <reply/username/userid> <reason>",
+            "To unban member from chat.",
         ],
-        [f"{cmd}kick <reply/username/userid>", "Mengeluarkan pengguna dari grup."],
+        [".kick <reply/username/userid>", "To simply kick an user."],
         [
-            f"{cmd}promote atau {cmd}fullpromote",
-            "Mempromosikan member sebagai admin atau cofounder.",
+            ".promote atau .fullpromote",
+            "To promote an user.",
         ],
-        [f"{cmd}demote", "Menurunkan admin sebagai member."],
+        [".demote", "To demote an admin."],
         [
-            f"{cmd}mute <reply/username/userid>",
-            "Membisukan member dari Grup.",
-        ],
-        [
-            f"{cmd}unmute <reply/username/userid>",
-            "Membuka mute member dari Grup.",
+            ".mute <reply/username/userid>",
+            "To mute an user.",
         ],
         [
-            f"{cmd}pin <reply>",
-            "Untuk menyematkan pesan dalam grup.",
+            ".unmute <reply/username/userid>",
+            "To unmute an user.",
         ],
         [
-            f"{cmd}unpin <reply>",
-            "Untuk melepaskan pin pesan dalam grup.",
+            ".pin <reply>",
+            "To pin something in chat.",
         ],
         [
-            f"{cmd}setgpic <reply ke foto>",
-            "Untuk mengubah foto profil grup",
+            ".unpin <reply>",
+            "To unpin pinned message.",
+        ],
+        [
+            ".setgpic <reply ke foto>",
+            "To set group pic",
         ],
     ],
 )
