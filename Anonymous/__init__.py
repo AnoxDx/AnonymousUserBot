@@ -1,5 +1,5 @@
 from pyrogram import Client
-from config import API_ID, API_HASH, OWNER_ID, BOT_TOKEN, STRING_SESSION
+from config import API_ID, API_HASH, OWNER_ID, BOT_TOKEN, STRING_SESSION, SUDO_USERS
 from datetime import datetime
 import time
 from aiohttp import ClientSession
@@ -9,6 +9,7 @@ START_TIME = datetime.now()
 CMD_HELP = {}
 clients = []
 accounts = []
+SUDO_USER = SUDO_USERS
 
 app = Client(
     name="app",
@@ -19,7 +20,7 @@ app = Client(
     in_memory=True,
 )
 
-SUDO_USER = OWNER_ID
+SUDO_USERS.append(OWNER_ID)
 aiosession = ClientSession() 
 
 if STRING_SESSION:
