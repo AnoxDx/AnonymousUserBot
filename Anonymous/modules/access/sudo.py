@@ -7,7 +7,7 @@ from Anonymous import SUDO_USER
 from config import OWNER_ID
 from Anonymous.modules.help import add_help_cmd
 
-@Client.on_message(filters.command("sudolist", ".") & filters.me)
+@Client.on_message(filters.command(["sudolist"], ".") & filters.me)
 async def gbanlist(client: Client, message: Message):
     users = (SUDO_USER)
     ex = await message.edit_text("`Processing...`")
@@ -21,7 +21,7 @@ async def gbanlist(client: Client, message: Message):
     return await ex.edit(gban_list)
 
 
-@Client.on_message(filters.command("addsudo", ".") & filters.user(OWNER_ID))
+@Client.on_message(filters.command(["addsudo"], ".") & filters.user(OWNER_ID))
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
@@ -52,7 +52,7 @@ async def gmute_user(client: Client, message: Message):
         return
 
 
-@Client.on_message(filters.command("rmsudo", ".") & filters.user(OWNER_ID))
+@Client.on_message(filters.command(["rmsudo"], ".") & filters.user(OWNER_ID))
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
@@ -82,3 +82,14 @@ async def gmute_user(client: Client, message: Message):
         await ex.edit(f"**ERROR:** `{e}`")
         return
 
+add_help_cmd(
+    "sudos",
+    [
+        [
+            "addsudo <reply/username/userid>",
+            "Add any user as Sudo (Use This At your own risk maybe sudo users can control ur account).",
+        ],
+        ["rmsudo <reply/username/userid>", "Remove Sudo access."],
+        ["sudolist", "Displays the Sudo List."],
+    ],
+)
