@@ -10,7 +10,7 @@ from typing import Dict, List, Union
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message, User
 
-sudoersdb = mongodb.sudoers
+sudoersdb = db.sudoers
 
 SUDOERS = filters.user()
 
