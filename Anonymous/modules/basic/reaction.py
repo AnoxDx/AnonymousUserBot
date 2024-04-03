@@ -15,4 +15,4 @@ async def react(client: Client, message: Message):
  await client.send_reaction(chat_id=user_s_to_send, message_id=user_s_to_send, emoji=emoji)
 
 
-#########################################THIS PLUGIN IS UNDER MAINTAINCE##########################################
+#########################################THIS PLUGIN IS UNDER MAINTAINCE###########################################
