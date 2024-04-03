@@ -8,7 +8,7 @@ from config import OWNER_ID
 from Anonymous.modules.help import add_command_help
 
 am = []
-ok
+ok = []
 
 @Client.on_message(filters.command("sudolist", ".") & filters.me)
 async def gbanlist(client: Client, message: Message):
