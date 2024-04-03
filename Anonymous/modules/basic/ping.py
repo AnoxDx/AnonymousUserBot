@@ -10,11 +10,11 @@ from pyrogram import Client, filters
 async def ping(client: Client, message: Message):
         if len(message.command) == 1:
             start = datetime.now()
-            await message.reply_text(". . .")
+            X = await message.reply_text(". . .")
             end = datetime.now()
             m_s = (end - start).microseconds / 1000
-            await message.edit_text(
-                f"**Pöng !**\n`{m_s} ms`\n⧑ {client.me.mention}",
+            await X.edit_text(
+                f"**Pöng !**\n`{m_s} ms`\n⧑ @TheAmaX",
                 disable_web_page_preview=True
             )
         elif len(message.command) == 2:
