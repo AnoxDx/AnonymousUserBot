@@ -5,6 +5,7 @@ python-dotenv
 pyromod
 motor
 pyyaml
+bs4
 requests
 speedtest-cli
 aiohttp
