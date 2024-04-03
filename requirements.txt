@@ -12,6 +12,7 @@ prettytable
 humanize
 uwuify
 telegraph
+googlesearch-python
 aiohttp
 aiofiles
 gitpython
