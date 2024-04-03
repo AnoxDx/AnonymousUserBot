@@ -43,6 +43,6 @@ async def callback_query(Client, CallbackQuery):
         )
  if CallbackQuery.data == "OKBHAY":
     await CallbackQuery.edit_message_text(
-             START_MESSAGE,
-             reply_markup=InlineKeyboardMarkup(START_BUTTONS)
+             START_TEXT,
+             reply_markup=InlineKeyboardMarkup(buttons)
          )
