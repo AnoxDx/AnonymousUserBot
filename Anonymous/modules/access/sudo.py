@@ -10,7 +10,7 @@ from Anonymous.modules.help import add_help_cmd
 @Client.on_message(filters.command(["sudolist"], ".") & filters.me)
 async def gbanlist(client: Client, message: Message):
     users = (SUDO_USER)
-    ex = await message.edit_text("`Processing...`")
+    ex = await message.reply_text("`Processing...`")
     if not users:
         return await ex.edit("No Users have been set yet")
     gban_list = "**Sudo Users:**\n"
@@ -39,7 +39,7 @@ async def gmute_user(client: Client, message: Message):
         await ex.edit(f"`Please specify a valid user!`")
         return
     if user.id == client.me.id:
-        return await ex.edit("**SOON**")
+        return await ex.edit("**Ok bhai**")
 
     try:
         if user.id in SUDO_USER:
@@ -70,7 +70,7 @@ async def gmute_user(client: Client, message: Message):
         await ex.edit(f"`Please specify a valid user!`")
         return
     if user.id == client.me.id:
-        return await ex.edit("**SOON**")
+        return await ex.edit("**Ok bhai**")
 
     try:
         if user.id not in SUDO_USER:
