@@ -42,6 +42,15 @@ async def callback_query(Client, CallbackQuery):
             reply_markup=InlineKeyboardMarkup(PAGE_BUTTONS)
         )
  if CallbackQuery.data == "OKBHAY":
+     buttons = [
+           [
+                InlineKeyboardButton("Channel", url="t.me/TheAmaX"),
+                InlineKeyboardButton("Chats", url="t.me/AmaXchats")
+            ],
+           [
+                 InlineKeyboardButton('SOURCE', callback_data="HELP")
+            ]
+            ]
     await CallbackQuery.edit_message_text(
              START_TEXT,
              reply_markup=InlineKeyboardMarkup(buttons)
