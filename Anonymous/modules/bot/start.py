@@ -36,12 +36,12 @@ async def callback_query(Client, CallbackQuery):
             InlineKeyboardButton('⟲ ʙᴀᴄᴋ', callback_data="OKBHAY")
         ]
  ]
-    if CallbackQuery.data == "HELP":
+ if CallbackQuery.data == "HELP":
     await CallbackQuery.edit_message_text(
             PAGE_TEXT,
             reply_markup=InlineKeyboardMarkup(PAGE_BUTTONS)
         )
-    if CallbackQuery.data == "OKBHAY":
+ if CallbackQuery.data == "OKBHAY":
     await CallbackQuery.edit_message_text(
              START_MESSAGE,
              reply_markup=InlineKeyboardMarkup(START_BUTTONS)
