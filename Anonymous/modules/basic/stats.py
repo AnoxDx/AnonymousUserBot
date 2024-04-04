@@ -6,7 +6,7 @@ from Anonymous.helper.Pyt import ReplyCheck
 
 @Client.on_message(filters.command(["stats"], ".") & filters.me)
 async def stats(client: Client, message: Message):
-    Man = await message.edit_text("`Collecting...`")
+    X = await message.edit_text("`Collecting...`")
     start = datetime.now()
     u = 0
     g = 0
@@ -35,7 +35,7 @@ async def stats(client: Client, message: Message):
 
     end = datetime.now()
     ms = (end - start).seconds
-    await Man.edit_text(
+    await X.edit_text(
         """`Time Taken {} seconds`
 `Private Messages ➼ {}`
 `Groups ➼ {}`
