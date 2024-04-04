@@ -3,9 +3,8 @@ from pyrogram import *
 from pyrogram.types import *
 from Anonymous.modules.help.basic import edit_or_reply, get_text, get_user
 from Anonymous.modules.help import *
-from config import OWNER_ID
 
-OWNER = OWNER_ID
+OWNER = os.environ.get("OWNER", None)
 BIO = os.environ.get("BIO", "404 : Bio Lost")
 
 
