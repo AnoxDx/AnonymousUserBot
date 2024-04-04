@@ -9,7 +9,7 @@
         "pyrogram",
         "Anonymous"
     ],
-    "repository": "https://github.com/The-HellBot/HellBot/",
+    "repository": "https://github.com/AnoxDx/AnonymousUserBot",
     "env": {
         "API_HASH": {
             "description": "Get this value from my.telegram.org",
