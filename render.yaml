@@ -18,4 +18,12 @@ services:
         sync: false
       - key: MONGO_URL
         sync: false    
+      - key: API_ID
+        sync: false  
+      - key: API_HASH
+        sync: false  
+      - key: PM_LOGGER
+        sync: false  
+      - key: LOG_GROUP
+        sync: false  
     autoDeploy: false
