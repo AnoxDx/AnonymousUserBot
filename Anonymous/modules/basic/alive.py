@@ -13,6 +13,7 @@ from Anonymous.modules.help.basic import edit_or_reply
 from Anonymous.helper.Pyt import ReplyCheck
 from Anonymous.modules.help import add_help_cmd
 from Anonymous.modules.help.get import get_readable_time
+from Anonymous import CMD_HELP
 
 alive_logo = "https://telegra.ph//file/02469a3da0b5840bd9fe5.mp4"
 StartTime = time.time()
