@@ -36,7 +36,7 @@ async def stats(client: Client, message: Message):
     end = datetime.now()
     ms = (end - start).seconds
     await X.edit_text(
-        """**🔰 Stats for {} 🔰**\n\n
+        """**🔰 Stats for {} 🔰**\n
 `Time Taken {} seconds`
 ⚡`Private Messages ➼ {}`
 ⚡`Private Groups ➼ {}`
