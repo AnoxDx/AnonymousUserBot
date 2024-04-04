@@ -28,19 +28,21 @@
 <b> VPS/Locally deploy! </b>
 </h3></summary>
 - Upgrade and Update by :
-$ apt-get -y update
+`$ apt-get -y update`
 - Install required packages by :
-$ apt-get -y install git gcc python3-pip -y
+`$ apt-get -y install git gcc python3-pip -y`
 - Clone the repository by :
-$ git clone https://github.com/AnoxDx/AnonymousUserBot
+`$ git clone https://github.com/AnoxDx/AnonymousUserBot`
 - Get Up By :
-$ cd AnonymousUserBot
+`$ cd AnonymousUserBot`
 - Install requirements by :
-$ pip3 install -U -r requirements.txt
+`$ pip3 install -U -r requirements.txt`
 - Set Variables By :
-$ cp sample.env .env
+`$ cp sample.env .env`
 - Input Veriables
-$ nano .env
+`$ nano .env`
+
+  
 </details>
 
 ## Disclaimer 
