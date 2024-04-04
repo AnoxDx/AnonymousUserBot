@@ -6,7 +6,7 @@ services:
     buildCommand: pip install -U -r requirements.txt
     startCommand: python3 -m Anonymous
     repo: https://github.com/AnoxDx/AnonymousUserBot      
-    branch: master
+    branch: main
     envVars:
       - key: SUDO_USERS 
         sync: false
