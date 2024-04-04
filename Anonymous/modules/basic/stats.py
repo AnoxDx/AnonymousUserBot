@@ -36,15 +36,15 @@ async def stats(client: Client, message: Message):
     end = datetime.now()
     ms = (end - start).seconds
     await X.edit_text(
-        """`Time Taken {} seconds`
-`Private Messages ➼ {}`
-`Groups ➼ {}`
-`Super Groups ➼ {}`
-`Channels ➼ {}`
-`Bots ➼ {}`
-`You Are Admin in {} Chats.`""".format(
-            ms, u, g, sg, c, b, a_chat
-        )
+        """**🔰 Stats for {} 🔰**\n\n
+`Time Taken {} seconds`
+⚡`Private Messages ➼ {}`
+⚡`Private Groups ➼ {}`
+⚡`Super Groups ➼ {}`
+⚡`Channels ➼ {}`
+⚡`Bots ➼ {}`
+`You Are Admin in {} Chats.`\n\n
+Stats taken by AmaX Userbot""".format(client.UserMention(), ms, u, g, sg, c, b, a_chat)
     )
 
 
