@@ -44,7 +44,7 @@ async def stats(client: Client, message: Message):
 ⚡`Channels ➼ {}`
 ⚡`Bots ➼ {}`
 `You Are Admin in {} Chats.`\n\n
-Stats taken by AmaX Userbot""".format(client.mention(), ms, u, g, sg, c, b, a_chat)
+Stats taken by AmaX Userbot""".format(client.me.mention(), ms, u, g, sg, c, b, a_chat)
     )
 
 
