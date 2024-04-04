@@ -23,6 +23,7 @@
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/AnoxDx/AnonymousUserBot)
 
+<details>
 ## VPS/Locally deploy!
 ```console
 $ apt-get -y update
@@ -33,7 +34,7 @@ $ pip3 install -U -r requirements.txt
 $ cp sample.env .env
 $ nano .env
 ```
-
+</details>
 
 ## Disclaimer 
 
