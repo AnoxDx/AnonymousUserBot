@@ -5,5 +5,4 @@
 ## Credits 
 - TeamAmaX
 - Zaid (For global tools)
-- Pyro-Man
 - pyrogram
