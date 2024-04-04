@@ -13,7 +13,7 @@ prettytable
 humanize
 uwuify
 telegraph
-googlesearch-python
+googlesearch-python==1.0.1
 aiohttp
 aiofiles
 gitpython
