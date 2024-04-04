@@ -27,7 +27,6 @@
 <summary><h3>
 <b> VPS/Locally deploy! </b>
 </h3></summary>
-```console
 $ apt-get -y update
 $ apt-get -y install git gcc python3-pip -y
 $ git clone https://github.com/AnoxDx/AnonymousUserBot
@@ -35,7 +34,6 @@ $ cd AnonymousUserBot
 $ pip3 install -U -r requirements.txt
 $ cp sample.env .env
 $ nano .env
-```
 </details>
 
 ## Disclaimer 
