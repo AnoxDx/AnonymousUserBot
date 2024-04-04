@@ -24,7 +24,9 @@
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/AnoxDx/AnonymousUserBot)
 
 <details>
-## VPS/Locally deploy!
+<summary><h3>
+<b> VPS/Locally deploy! </b>
+</h3></summary>
 ```console
 $ apt-get -y update
 $ apt-get -y install git gcc python3-pip -y
