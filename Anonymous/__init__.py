@@ -21,6 +21,9 @@ app = Client(
 )
 
 SUDO_USERS.append(OWNER_ID)
+
+CMD_HELP = {}
+
 aiosession = ClientSession() 
 
 if STRING_SESSION:
