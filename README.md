@@ -13,7 +13,7 @@
 - **Specially Id safety increased**
 
 
-## 𝐃𝐄𝐏𝐋𝐎𝐘𝐌𝐄𝐍𝐓𝐒
+## DEPLOYMENTS
 
 - Due to salesforce update, First fork this repo then deploy on heroku
 
