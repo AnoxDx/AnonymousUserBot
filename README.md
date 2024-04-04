@@ -28,7 +28,7 @@
 <b> VPS/Locally deploy! </b>
 </h3></summary>
 
-- Get your [Necessary Variables](https://github.com/AnoxDx/AnonymousUserBot/blob/master/Anonymous/config.py)
+- Get your [Necessary Variables](https://github.com/AnoxDx/AnonymousUserBot/blob/master/config.py)
 - Upgrade and Update by :
 `$ apt-get -y update`
 - Install required packages by :
