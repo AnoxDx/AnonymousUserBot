@@ -43,8 +43,8 @@ async def stats(client: Client, message: Message):
 ⚡`Super Groups ➼ {}`
 ⚡`Channels ➼ {}`
 ⚡`Bots ➼ {}`
-`You Are Admin in {} Chats.`\n\n
-Stats taken by AmaX Userbot""".format(client.me.mention(), ms, u, g, sg, c, b, a_chat)
+`You Are Admin in {} Chats.`\n
+**Stats taken by [AmaX Userbot](https://github.com/AnoxDx/AnonymousUserBot)**""".format(client.me.mention(), ms, u, g, sg, c, b, a_chat)
     )
 
 
