@@ -18,6 +18,7 @@ from Anonymous import CMD_HELP
 alive_logo = "https://telegra.ph//file/02469a3da0b5840bd9fe5.mp4"
 StartTime = time.time()
 modules = CMD_HELP
+BOT_VER = "3.0@main"
 
 @Client.on_message(filters.command(["alive", "awake"], ".") & filters.me)
 async def alive(client: Client, message: Message):
