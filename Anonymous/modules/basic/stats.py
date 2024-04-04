@@ -6,30 +6,45 @@ from Anonymous.helper.Pyt import ReplyCheck
 
 @Client.on_message(filters.command(["stats"], ".") & filters.me)
 async def stats(client: Client, message: Message):
-    Ano = await message.edit_text("`Collecting stats...`")
-    bot = 0
-    user = 0
-    group = 0
-    channel = 0
-    stats_format = """
-➨ **STATS :**
+    Man = await message.edit_text("`Collecting...`")
+    start = datetime.now()
+    u = 0
+    g = 0
+    sg = 0
+    c = 0
+    b = 0
+    a_chat = 0
+    Meh = await client.get_me()
+    async for dialog in client.get_dialogs():
+        if dialog.chat.type == enums.ChatType.PRIVATE:
+            u += 1
+        elif dialog.chat.type == enums.ChatType.BOT:
+            b += 1
+        elif dialog.chat.type == enums.ChatType.GROUP:
+            g += 1
+        elif dialog.chat.type == enums.ChatType.SUPERGROUP:
+            sg += 1
+            user_s = await dialog.chat.get_member(int(Meh.id))
+            if user_s.status in (
+                enums.ChatMemberStatus.OWNER,
+                enums.ChatMemberStatus.ADMINISTRATOR,
+            ):
+                a_chat += 1
+        elif dialog.chat.type == enums.ChatType.CHANNEL:
+            c += 1
 
-➥ **BOTS:** {}
-➥ **USERS:** {}
-➥ **GROUPS:** {}
-➥ **CHANNELS:** {}
+    end = datetime.now()
+    ms = (end - start).seconds
+    await Man.edit_text(
+        """`Time Taken {} seconds`
+`Private Messages ➼ {}`
+`Groups ➼ {}`
+`Super Groups ➼ {}`
+`Channels ➼ {}`
+`Bots ➼ {}`
+`You Are Admin in {} Chats.`""".format(
+            ms, u, g, sg, c, b, a_chat
+        )
+    )
 
-**© Collected by [AmaX UserBot](https://t.me/TheAmaX) !**
-"""
 
-    async for A in client.get_dialogs():
-        if A.chat.type == ChatType.CHANNEL:
-            channel += 1
-        if A.chat.type == ChatType.BOT:
-            bot += 1
-        if A.chat.type in (ChatType.SUPERGROUP, ChatType.GROUP):
-            group += 1
-        if A.chat.type == ChatType.PRIVATE:
-            user += 1
-
-    await Ano.edit_text(stats_format.format(bot, user, group, channel))
