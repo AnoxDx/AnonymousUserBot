@@ -25,7 +25,7 @@
 
 <details>
 <summary><h3>
-<b> VPS/Locally deploy! </b>
+<b> VPS/Locally Deploy !</b>
 </h3></summary>
 
 - Get your [Necessary Variables](https://github.com/AnoxDx/AnonymousUserBot/blob/master/config.py)
